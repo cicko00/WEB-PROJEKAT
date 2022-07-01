@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Komentari>
+  <Komentar>
+    <Tekst>Zadovoljan sam</Tekst>
+    <Ocena>5</Ocena>
+    <nazivPosetioca>Cicko</nazivPosetioca>
+    <nazivFitnesCentra>FULL GYM</nazivFitnesCentra>
+  </Komentar>
+  <Komentar>
+    <Tekst>dobro.jE</Tekst>
+    <Ocena>3</Ocena>
+    <nazivPosetioca>Cicko</nazivPosetioca>
+    <nazivFitnesCentra>FULL GYM</nazivFitnesCentra>
+  </Komentar>
+</Komentari>

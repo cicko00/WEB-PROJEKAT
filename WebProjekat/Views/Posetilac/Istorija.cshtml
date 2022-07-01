@@ -1,9 +1,7 @@
 ﻿
-
 @{
-    
     Layout = null;
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Istorija";
 }
 
 <html>
@@ -48,15 +46,18 @@
                 background-color: gold;
                 color: black;
             }
-        .polje1{
-            border-bottom:3px solid;
-            border-color:white;
+
+        .polje1 {
+            border-bottom: 3px solid;
+            border-color: white;
         }
-        .polje2{
-            height:10px;
+
+        .polje2 {
+            height: 10px;
         }
-        .polje3{
-            border-top:3px solid;
+
+        .polje3 {
+            border-top: 3px solid;
         }
 
         .button1 {
@@ -76,7 +77,6 @@
             .input1:hover {
                 background-color: white;
             }
-       
     </style>
 </head>
 
@@ -85,12 +85,12 @@
 
         <h1 class="h11">
 
-            FIND YOUR GYM
+            ISTORIJA TRENINGA
 
         </h1>
         <div class="div2">
-            <input class="registracija" type="button" value="Registruj se" onclick="location.href='@Url.Action("Registracija","Home")'" />
-            <input class="registracija" type="button" value="Prijavi se" onclick="location.href='@Url.Action("Prijava","Home")'" />
+            <input class="registracija" type="button" value="Vrati se nazad" onclick="location.href='@Url.Action("Index","Posetilac")'" />
+           
         </div>
 
     </div>
@@ -99,25 +99,25 @@
     <br />
     <br />
     <table class="tabela1">
-        <tr><th colspan="4"><h2>Fitnes Centri</h2></th></tr>
-        <tr><td class="polje1">Naziv</td><td class="polje1">Adresa</td><td class="polje1">Godina Otvaranja</td><td class="polje1"></td></tr>
-        @foreach (var f in ViewBag.FitnesCentri)
+        <tr><th colspan="4"><h2>Protekli treninzi</h2></th></tr>
+        <tr><td class="polje1">Naziv</td><td class="polje1">Tip</td><td class="polje1">Fitnes Centar</td><td class="polje1">Datum i vreme</td></tr>
+        @foreach (var f in ViewBag.IstorijaTreninga)
         {
-            <tr><td>@f.Naziv</td><td>@f.Adresa</td><td>@f.GodinaOtvaranja</td><td><form method="get" action="/Home/Prikaz"><input type="hidden" name="Naziv" value="@f.Naziv" /> <input class="registracija" type="submit" value="Detalji" /></form></td></tr>
+            <tr><td>@f.Naziv</td><td>@f.TipTreninga</td><td>@f.FitnesCentar.Naziv</td><td>@f.DatumiVreme.ToString()</td></tr>
         }
     </table>
     <br />
     <br />
-    <form action="/Home/Sortiranje" method="post">
+    <form action="/Posetilac/IstorijaSortiranje" method="post">
         <table class="tabela1">
-            <tr><th colspan="5"><h2>PRETRAGA</h2></th></tr>
-            <tr><td>Godina otvaranja:</td><td>od:</td><td><input class="input1" name="godinaOd" /></td><td>do:</td><td><input class="input1" name="godinaDo" /></td></tr>
+            <tr><th colspan="2"><h2>PRETRAGA</h2></th></tr>
+            <tr><td>naziv:</td><td><input class="input1" name="naziv" /></td></tr>
             <tr><td class="polje2" colspan="5"></td></tr>
-            <tr><td>Naziv:</td><td></td><td colspan="3"><input class="input1" name="nazivPretraga" /></td></tr>
+            <tr><td>Tip:</td><td><select class="input1" name="tip" ><option>YOGA</option><option>BODY_PUMP</option><option>CARDIO</option><option>LESS_MILLS_TONE</option></select></td></tr>
             <tr><td class="polje2" colspan="5"></td></tr>
-            <tr><td>Adresa:</td><td></td><td colspan="3"><input class="input1" name="adresaPretraga" /></td></tr>
+            <tr><td>Naziv fitnes centra:</td><td><input class="input1" name="nazivfitnescentra" /></td></tr>
             <tr><td class="polje2" colspan="5"></td></tr>
-            <tr><td>Sortiraj:</td><td></td><td><select class="input1" name="sortiranjePo"><option></option><option>NAZIV</option><option>GODINA OTVARANJA</option><option>ADRESA</option></select></td><td></td><td><select name="sortiranjeRedosled" class="input1"><option>OPADAJUCE</option><option>RASTUCE</option></select></td></tr>
+            <tr><td>Sortiraj:</td><td><select class="input1" name="sortiranjePo"><option></option><option>NAZIV</option><option>DATUM I VREME</option><option>TIP TRENINGA</option></select></td><td></td><td><select name="sortiranjeRedosled" class="input1"><option>OPADAJUCE</option><option>RASTUCE</option></select></td></tr>
             <tr><td class="polje2" colspan="5"></td></tr>
             <tr><td class="polje3" colspan="5"><input class="button1" type="submit" value="Pretrazi" /></td></tr>
 
@@ -129,3 +129,4 @@
 
 </body>
 </html>
+

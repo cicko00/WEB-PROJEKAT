@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Korisnici>
+  <Korisnik>
+    <KorIme>jovajova</KorIme>
+    <Lozinka>JOVA123</Lozinka>
+    <Ime>Jova</Ime>
+    <Prezime>Jovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>jova@gmail.com</Email>
+    <DatumRodjenja>1/1/1995</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik>BEAST FITNESS/</NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>perapera</KorIme>
+    <Lozinka>PERA123</Lozinka>
+    <Ime>Pera</Ime>
+    <Prezime>Peric</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>pera@gmail.com</Email>
+    <DatumRodjenja>1/1/1996</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik>FULL GYM/</NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>ana</KorIme>
+    <Lozinka>anaana</Lozinka>
+    <Ime>Ana</Ime>
+    <Prezime>Jovanovic</Prezime>
+    <Pol>ZENSKI</Pol>
+    <Email>anaa@gmail.com</Email>
+    <DatumRodjenja>1/1/1992</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik>GYMGYM/</NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>cicko</KorIme>
+    <Lozinka>cicko</Lozinka>
+    <Ime>Cvijetin</Ime>
+    <Prezime>Glisic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>cickooo@gmail.com</Email>
+    <DatumRodjenja>2000-07-03T00:00:00</DatumRodjenja>
+    <Uloga>POSETILAC</Uloga>
+    <naziviGrupnihTreningaPosetilac>CARDIO VEZBE/YOGA </naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+  </Korisnik>
+</Korisnici>

@@ -121,9 +121,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PosetilacController.cs" />
+    <Compile Include="Controllers\TrenerController.cs" />
+    <Compile Include="Controllers\VlasnikController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BazaPodataka.cs" />
+    <Compile Include="Models\Fitnes_Centar.cs" />
+    <Compile Include="Models\Grupni_Trening.cs" />
+    <Compile Include="Models\Komentar.cs" />
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Pol.cs" />
+    <Compile Include="Models\Tip_Treninga.cs" />
+    <Compile Include="Models\Uloga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +146,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Fitnes_Centri.xml" />
+    <Content Include="Models\Grupni_Treninzi.xml" />
+    <Content Include="Models\Komentari.xml" />
+    <Content Include="Models\Vlasnici.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -162,10 +177,20 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Registracija.cshtml" />
+    <Content Include="Views\Home\Prijava.cshtml" />
+    <Content Include="Views\Home\Prikaz.cshtml" />
+    <Content Include="Views\Posetilac\Index.cshtml" />
+    <Content Include="Views\Posetilac\IzmeniProfil.cshtml" />
+    <Content Include="Views\Posetilac\PrikaziProfil.cshtml" />
+    <Content Include="Views\Posetilac\Prikaz.cshtml" />
+    <Content Include="Views\Posetilac\Istorija.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Prijavljen\" />
+    <Folder Include="Views\Trener\" />
+    <Folder Include="Views\Vlasnik\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

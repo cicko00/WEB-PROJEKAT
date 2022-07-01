@@ -7,7 +7,7 @@ using WebProjekat.Models;
 
 namespace WebProjekat.Controllers
 {
-    public class HomeController : Controller
+    public class VlasnikController : Controller
     {
         public ActionResult Index()
         {
@@ -17,9 +17,9 @@ namespace WebProjekat.Controllers
 
             List<Fitnes_Centar> FitnesCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
 
-            
-               
-            if(Session["FitnesCentri"] != null)
+
+
+            if (Session["FitnesCentri"] != null)
             {
                 List<Fitnes_Centar> tempFitnesCentar = (List<Fitnes_Centar>)Session["FitnesCentri"];
                 ViewBag.FitnesCentri = tempFitnesCentar;
@@ -31,63 +31,26 @@ namespace WebProjekat.Controllers
             return View();
         }
 
-        public ActionResult Registracija()
+        public ActionResult RegistracijaTrenera()
         {
-            
+
 
             return View();
         }
+
+
 
        
-        
-        public ActionResult Prijava()
-        {
-           
-            
 
-            return View();
-        }
+       
 
-        [HttpPost]
-        public ActionResult PrijaviKorisnika(string korime,string lozinka)
-        {
-            foreach(Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
-            {
-                if(k.KorIme==korime && k.Lozinka == lozinka)
-                {
-                    if (k.Uloga == ULOGA.POSETILAC)
-                    {
-                        
-                        Session["PrijavljeniKorisnik"] = k;
-                        return RedirectToAction("Index", "Posetilac");
-                    }
-                    else if (k.Uloga == ULOGA.TRENER)
-                    {
-                        
-                        Session["PrijavljeniKorisnik"] = k;
-                        return RedirectToAction("Index", "Trener");
-                    }
-                    else if (k.Uloga == ULOGA.VLASNIK)
-                    {
-                        
-                        Session["PrijavljeniKorisnik"] = k;
-                        return RedirectToAction("Index", "Vlasnik");
-                    }
-                }
-                
-            }
-            TempData["Greska"] = "Neispravno korisnicko ime ili lozinka.Pokusajte ponovo!";
-            return RedirectToAction("Prijava", "Home");
-
-        }
-        
         public ActionResult Prikaz(string Naziv)
         {
             List<Korisnik> Korisnici = (List<Korisnik>)HttpContext.Application["Korisnici"];
             List<Grupni_Trening> GrupniTreninzi = (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"];
             List<Fitnes_Centar> FitnesCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
             List<Komentar> Komentari = (List<Komentar>)HttpContext.Application["Komentari"];
-            
+
             HttpContext.Application["GrupniTreninzi"] = GrupniTreninzi;
             HttpContext.Application["Komentari"] = Komentari;
 
@@ -114,22 +77,22 @@ namespace WebProjekat.Controllers
         }
 
         [HttpPost]
-        public ActionResult Sortiranje(string godinaOd,string godinaDo,string nazivPretraga,string adresaPretraga,string sortiranjePo,string sortiranjeRedosled)
+        public ActionResult Sortiranje(string godinaOd, string godinaDo, string nazivPretraga, string adresaPretraga, string sortiranjePo, string sortiranjeRedosled)
         {
             Session["FitnesCentri"] = new List<Fitnes_Centar>();
-            
+
             List<Fitnes_Centar> sviCentri = new List<Fitnes_Centar>();
             sviCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
-            if (godinaOd.Trim() != String.Empty && Int32.TryParse(godinaOd.Trim(),out int a)==true)
+            if (godinaOd.Trim() != String.Empty && Int32.TryParse(godinaOd.Trim(), out int a) == true)
             {
 
                 List<Fitnes_Centar> zaBrisanje = new List<Fitnes_Centar>();
-                foreach(Fitnes_Centar fc in sviCentri)
+                foreach (Fitnes_Centar fc in sviCentri)
                 {
                     if (fc.GodinaOtvaranja < a)
                         zaBrisanje.Add(fc);
                 }
-                foreach(Fitnes_Centar fc in zaBrisanje)
+                foreach (Fitnes_Centar fc in zaBrisanje)
                 {
                     sviCentri.Remove(fc);
                 }
@@ -177,7 +140,7 @@ namespace WebProjekat.Controllers
                 }
             }
 
-            if(sortiranjePo != String.Empty)
+            if (sortiranjePo != String.Empty)
             {
                 if (sortiranjePo.Trim() == "NAZIV")
                 {
@@ -218,32 +181,32 @@ namespace WebProjekat.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
-        public ActionResult DodajNovogKorisnika(string korime,string lozinka,string ponlozinka,string ime,string prezime,string pol,string email,string datumrodjenja,string uloga)
+        public ActionResult DodajNovogTrenera(string korime, string lozinka, string ponlozinka, string ime, string prezime, string pol, string email, string datumrodjenja, string uloga)
         {
-            if(korime.Trim()=="" || lozinka.Trim() == "" || ponlozinka.Trim() == ""|| ime.Trim() == "" || prezime.Trim() == "" || pol.Trim() == "" || email.Trim() == "" || datumrodjenja.Trim() == "" || uloga.Trim() == "")
+            if (korime.Trim() == "" || lozinka.Trim() == "" || ponlozinka.Trim() == "" || ime.Trim() == "" || prezime.Trim() == "" || pol.Trim() == "" || email.Trim() == "" || datumrodjenja.Trim() == "" || uloga.Trim() == "")
             {
                 TempData["Greska"] = "Niste uneli sva polja";
                 return RedirectToAction("Registracija", "Home");
             }
-            
+
             if (lozinka != ponlozinka)
             {
-                
+
                 TempData["Greska"] = "Lozinka i ponovljen unos lozinke se ne poklapaju";
 
-                return RedirectToAction( "Registracija", "Home");
+                return RedirectToAction("Registracija", "Home");
             }
 
-            foreach(Korisnik k in (List < Korisnik >) HttpContext.Application["Korisnici"])
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
             {
-                if(k.KorIme==korime )
+                if (k.KorIme == korime)
                 {
-                    
+
                     TempData["Greska"] = "Korisnicko ime vec postoji";
 
                     return RedirectToAction("Registracija", "Home");
                 }
-                else if(k.Lozinka == lozinka)
+                else if (k.Lozinka == lozinka)
                 {
                     TempData["Greska"] = "Lozinka vec postoji";
                     return RedirectToAction("Registracija", "Home");

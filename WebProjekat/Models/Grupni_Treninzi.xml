@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GrupniTreninzi>
+  <GrupniTrening>
+    <Naziv>YOGA training</Naziv>
+    <TipTreninga>YOGA</TipTreninga>
+    <TrajanjeTreninga>70</TrajanjeTreninga>
+    <DatumiVreme>7/8/2022 9:30:00 PM</DatumiVreme>
+    <MaksBrojPosetilaca>15</MaksBrojPosetilaca>
+    <nazivFitnesCentra>GYMGYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>YOGA training 2</Naziv>
+    <TipTreninga>YOGA</TipTreninga>
+    <TrajanjeTreninga>70</TrajanjeTreninga>
+    <DatumiVreme>9/8/2022 9:30:00 PM</DatumiVreme>
+    <MaksBrojPosetilaca>15</MaksBrojPosetilaca>
+    <nazivFitnesCentra>GYMGYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>BEAST CARDIO </Naziv>
+    <TipTreninga>CARDIO</TipTreninga>
+    <TrajanjeTreninga>60</TrajanjeTreninga>
+    <DatumiVreme>06/03/2022 9:30:00 PM</DatumiVreme>
+    <MaksBrojPosetilaca>18</MaksBrojPosetilaca>
+    <nazivFitnesCentra>BEAST FITNESS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>CARDIO VEZBE</Naziv>
+    <TipTreninga>CARDIO</TipTreninga>
+    <TrajanjeTreninga>60</TrajanjeTreninga>
+    <DatumiVreme>2022-03-03T21:30:00</DatumiVreme>
+    <MaksBrojPosetilaca>18</MaksBrojPosetilaca>
+    <nazivFitnesCentra>FULL GYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>YOGA </Naziv>
+    <TipTreninga>YOGA</TipTreninga>
+    <TrajanjeTreninga>70</TrajanjeTreninga>
+    <DatumiVreme>2022-01-01T21:30:00</DatumiVreme>
+    <MaksBrojPosetilaca>15</MaksBrojPosetilaca>
+    <nazivFitnesCentra>FULL GYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+</GrupniTreninzi>
