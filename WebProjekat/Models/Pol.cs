@@ -7,8 +7,8 @@ namespace WebProjekat.Models
 {
     public  enum POL
     {
+         
+            MUSKI, ZENSKI  
         
-            MUSKI, ZENSKI 
-        
-    }
-}
+    } 
+}  

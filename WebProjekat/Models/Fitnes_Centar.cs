@@ -19,6 +19,7 @@ namespace WebProjekat.Models
        public double CenaJednogTreninga { get; set; }
        public double CenaGrupnogTreninga { get; set; }
        public double CenaTreningaSaTrenerom { get; set; }
+        public string Izbrisan { get; set; }
 
         public string nazivVlasnika { get; set; }
 
@@ -37,8 +38,12 @@ namespace WebProjekat.Models
             CenaJednogTreninga = cenaJednogTreninga;
             CenaGrupnogTreninga = cenaGrupnogTreninga;
             CenaTreningaSaTrenerom = cenaTreningaSaTrenerom;
+            Izbrisan = "NE";
         }
 
-        public Fitnes_Centar() { }
+        public Fitnes_Centar()
+        {
+            Izbrisan = "NE";
+        }
     }
 }

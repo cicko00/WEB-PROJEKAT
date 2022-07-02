@@ -272,6 +272,7 @@ namespace WebProjekat.Models
                 fc.CenaJednogTreninga = float.Parse(element.Element("CenaJednogTreninga").Value);
                 fc.CenaMesecneClanarine = float.Parse(element.Element("CenaMesecneClanarine").Value);
                 fc.CenaTreningaSaTrenerom = float.Parse(element.Element("CenaTreningaSaTrenerom").Value);
+                fc.Izbrisan = element.Element("Izbrisan").Value;
                 fc.nazivVlasnika = element.Element("nazivVlasnika").Value;
                 fitnescentri.Add(fc);
 
@@ -319,6 +320,7 @@ namespace WebProjekat.Models
                 kom.Ocena= int.Parse(element.Element("Ocena").Value);
                 kom.nazivFitnesCentra = element.Element("nazivFitnesCentra").Value;
                 kom.nazivPosetioca= element.Element("nazivPosetioca").Value;
+                kom.Odobren = element.Element("Odobren").Value;
 
 
 
@@ -359,7 +361,7 @@ namespace WebProjekat.Models
             {
                 foreach (var element in root.Elements())
                 {
-                    if (element.Element("Naziv").Value.Trim() == stari.Naziv && element.Element("Adresa").Value.Trim() == stari.Adresa)
+                    if (element.Element("Naziv").Value.Trim() == stari.Naziv.Trim() && element.Element("Adresa").Value.Trim() == stari.Adresa)
                     {
                         element.Remove();
 
@@ -367,7 +369,7 @@ namespace WebProjekat.Models
 
                 }
             }
-            root.Add(new XElement("FitnesCentar", new XElement("Naziv", novi.Naziv), new XElement("Adresa", novi.Adresa), new XElement("GodinaOtvaranja", novi.GodinaOtvaranja), new XElement("CenaMesecneClanarine", novi.CenaMesecneClanarine), new XElement("CenaGodisnjeClanarine", novi.CenaGodisnjeClanarine), new XElement("CenaGrupnogTreninga", novi.CenaGrupnogTreninga), new XElement("CenaJednogTreninga", novi.CenaJednogTreninga), new XElement("CenaTreningaSaTrenerom", novi.CenaTreningaSaTrenerom), new XElement("nazivVlasnika", novi.nazivVlasnika)));
+            root.Add(new XElement("FitnesCentar", new XElement("Naziv", novi.Naziv), new XElement("Adresa", novi.Adresa), new XElement("GodinaOtvaranja", novi.GodinaOtvaranja), new XElement("CenaMesecneClanarine", novi.CenaMesecneClanarine), new XElement("CenaGodisnjeClanarine", novi.CenaGodisnjeClanarine), new XElement("CenaGrupnogTreninga", novi.CenaGrupnogTreninga), new XElement("CenaJednogTreninga", novi.CenaJednogTreninga), new XElement("CenaTreningaSaTrenerom", novi.CenaTreningaSaTrenerom), new XElement("nazivVlasnika", novi.nazivVlasnika),new XElement("Izbrisan",novi.Izbrisan)));
             xml.Save("C:\\Users\\Cvijetin Glisic\\Desktop\\WEB_Projekat\\WebProjekat\\WebProjekat\\Models\\Fitnes_Centri.xml");
 
 
@@ -419,7 +421,7 @@ namespace WebProjekat.Models
 
                 }
             }
-            root.Add(new XElement("Komentar", new XElement("Tekst", novi.Tekst), new XElement("Ocena", novi.Ocena), new XElement("nazivPosetioca", novi.nazivPosetioca), new XElement("nazivFitnesCentra", novi.nazivFitnesCentra)));
+            root.Add(new XElement("Komentar", new XElement("Tekst", novi.Tekst), new XElement("Ocena", novi.Ocena), new XElement("nazivPosetioca", novi.nazivPosetioca), new XElement("nazivFitnesCentra", novi.nazivFitnesCentra),new XElement("Odobren",novi.Odobren)));
             xml.Save("C:\\Users\\Cvijetin Glisic\\Desktop\\WEB_Projekat\\WebProjekat\\WebProjekat\\Models\\Komentari.xml");
 
 

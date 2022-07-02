@@ -1,42 +1,51 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <FitnesCentri>
   <FitnesCentar>
-  <Naziv>FULL GYM</Naziv>
-  <Adresa>Danila Kisa 76</Adresa>
-  <GodinaOtvaranja>2015</GodinaOtvaranja>
-  <CenaMesecneClanarine>2300</CenaMesecneClanarine>
-  <CenaGodisnjeClanarine>9500</CenaGodisnjeClanarine>
-  <CenaJednogTreninga>430</CenaJednogTreninga>
-  <CenaGrupnogTreninga>700</CenaGrupnogTreninga>
-  <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
-  <nazivVlasnika>perapera</nazivVlasnika>
-</FitnesCentar>
-
-  <FitnesCentar>
-  <Naziv>BEAST FITNESS</Naziv>
-  <Adresa>Dostojevskog 76</Adresa>
-  <GodinaOtvaranja>2015</GodinaOtvaranja>
-  <CenaMesecneClanarine>2500</CenaMesecneClanarine>
-  <CenaGodisnjeClanarine>9300</CenaGodisnjeClanarine>
-  <CenaJednogTreninga>450</CenaJednogTreninga>
-  <CenaGrupnogTreninga>730</CenaGrupnogTreninga>
-  <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
-  <nazivVlasnika>jovajova</nazivVlasnika>
+    <Naziv>FULL GYM FITNESS</Naziv>
+    <Adresa>Danila Kisa 76</Adresa>
+    <GodinaOtvaranja>2016</GodinaOtvaranja>
+    <CenaMesecneClanarine>2300</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>9500</CenaGodisnjeClanarine>
+    <CenaGrupnogTreninga>700</CenaGrupnogTreninga>
+    <CenaJednogTreninga>430</CenaJednogTreninga>
+    <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
+    <nazivVlasnika>Perapera</nazivVlasnika>
+    <Izbrisan>NE</Izbrisan>
   </FitnesCentar>
-
+  <FitnesCentar>
+    <Naziv>BEAST FITNESS</Naziv>
+    <Adresa>Dostojevskog 76</Adresa>
+    <GodinaOtvaranja>2015</GodinaOtvaranja>
+    <CenaMesecneClanarine>2500</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>9300</CenaGodisnjeClanarine>
+    <CenaGrupnogTreninga>730</CenaGrupnogTreninga>
+    <CenaJednogTreninga>450</CenaJednogTreninga>
+    <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
+    <nazivVlasnika>jovajova</nazivVlasnika>
+    <Izbrisan>NE</Izbrisan>
+  </FitnesCentar>
   <FitnesCentar>
     <Naziv>GYMGYM</Naziv>
     <Adresa>Marka Miljanova 76</Adresa>
-    <GodinaOtvaranja>2022</GodinaOtvaranja>
+    <GodinaOtvaranja>2021</GodinaOtvaranja>
     <CenaMesecneClanarine>2000</CenaMesecneClanarine>
     <CenaGodisnjeClanarine>8000</CenaGodisnjeClanarine>
-    <CenaJednogTreninga>200</CenaJednogTreninga>
     <CenaGrupnogTreninga>300</CenaGrupnogTreninga>
+    <CenaJednogTreninga>200</CenaJednogTreninga>
     <CenaTreningaSaTrenerom>500</CenaTreningaSaTrenerom>
-    <nazivVlasnika>ana</nazivVlasnika>
+    <nazivVlasnika>Ana</nazivVlasnika>
+    <Izbrisan>NE</Izbrisan>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>TOP GYM</Naziv>
+    <Adresa>Svetog Save 33</Adresa>
+    <GodinaOtvaranja>2017</GodinaOtvaranja>
+    <CenaMesecneClanarine>2300</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>10000</CenaGodisnjeClanarine>
+    <CenaGrupnogTreninga>600</CenaGrupnogTreninga>
+    <CenaJednogTreninga>400</CenaJednogTreninga>
+    <CenaTreningaSaTrenerom>800</CenaTreningaSaTrenerom>
+    <nazivVlasnika>Ana</nazivVlasnika>
+    <Izbrisan>DA</Izbrisan>
   </FitnesCentar>
 </FitnesCentri>
-
-
-
-

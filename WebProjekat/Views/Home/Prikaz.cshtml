@@ -141,7 +141,7 @@
 @{ 
     foreach(var kom in ViewBag.Komentari)
     {
-        if (kom.FitnesCentar.Naziv == ViewBag.Naziv)
+        if (kom.FitnesCentar.Naziv == ViewBag.Naziv && kom.Odobren =="DA")
         {
             <table class="tabela2">
             <tr class="red1"><td>KORISNIK: </td><td>@kom.Posetilac.KorIme     </td><td>OCENA: </td><td>@kom.Ocena  zvezdica</td></tr>

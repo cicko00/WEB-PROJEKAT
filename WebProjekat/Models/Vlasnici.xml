@@ -1,46 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Korisnici>
   <Korisnik>
+    <KorIme>Perapera</KorIme>
+    <Lozinka>PERA123</Lozinka>
+    <Ime>Pera</Ime>
+    <Prezime>Peric</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>Pera@gmail.com</Email>
+    <DatumRodjenja>1996-01-01T00:00:00</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik>FULL GYM FITNESS/</NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>jova</KorIme>
+    <Lozinka>jova</Lozinka>
+    <Ime>Jovan</Ime>
+    <Prezime>Jovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>jole@gmail.com</Email>
+    <DatumRodjenja>2022-06-26T00:00:00</DatumRodjenja>
+    <Uloga>POSETILAC</Uloga>
+    <naziviGrupnihTreningaPosetilac>BEAST CARDIO </naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>janko</KorIme>
+    <Lozinka>janko</Lozinka>
+    <Ime>Pera</Ime>
+    <Prezime>Peric</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>Pera@gmail.com</Email>
+    <DatumRodjenja>1996-01-01T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>GYMGYM</fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
     <KorIme>jovajova</KorIme>
     <Lozinka>JOVA123</Lozinka>
-    <Ime>Jova</Ime>
+    <Ime>jova</Ime>
     <Prezime>Jovic</Prezime>
     <Pol>MUSKI</Pol>
     <Email>jova@gmail.com</Email>
-    <DatumRodjenja>1/1/1995</DatumRodjenja>
+    <DatumRodjenja>1995-01-01T00:00:00</DatumRodjenja>
     <Uloga>VLASNIK</Uloga>
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik>BEAST FITNESS/</NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>perapera</KorIme>
-    <Lozinka>PERA123</Lozinka>
-    <Ime>Pera</Ime>
-    <Prezime>Peric</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>pera@gmail.com</Email>
-    <DatumRodjenja>1/1/1996</DatumRodjenja>
-    <Uloga>VLASNIK</Uloga>
-    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>FULL GYM/</NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>ana</KorIme>
-    <Lozinka>anaana</Lozinka>
-    <Ime>Ana</Ime>
-    <Prezime>Jovanovic</Prezime>
-    <Pol>ZENSKI</Pol>
-    <Email>anaa@gmail.com</Email>
-    <DatumRodjenja>1/1/1992</DatumRodjenja>
-    <Uloga>VLASNIK</Uloga>
-    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>GYMGYM/</NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
     <KorIme>cicko</KorIme>
@@ -51,9 +65,23 @@
     <Email>cickooo@gmail.com</Email>
     <DatumRodjenja>2000-07-03T00:00:00</DatumRodjenja>
     <Uloga>POSETILAC</Uloga>
-    <naziviGrupnihTreningaPosetilac>CARDIO VEZBE/YOGA </naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaPosetilac>BEAST CARDIO </naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>Ana</KorIme>
+    <Lozinka>anaana</Lozinka>
+    <Ime>Ana</Ime>
+    <Prezime>Jovanovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>anaa@gmail.com</Email>
+    <DatumRodjenja>1992-01-01T00:00:00</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik>GYMGYM/</NazivifitnesCentaraVlasnik>
   </Korisnik>
 </Korisnici>

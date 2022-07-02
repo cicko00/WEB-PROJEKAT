@@ -1,9 +1,7 @@
 ﻿
 @{
-    /**/
-
-    ViewBag.Title = "Prikaz";
     Layout = null;
+    ViewBag.Title = "Prikaz";
 }
 
 <style>
@@ -77,18 +75,6 @@
             color: black;
         }
 
-    .button2 {
-        background-color: black;
-        color: blue;
-        border: 2px solid;
-        border-color: blue;
-    }
-
-        .button2:hover {
-            background-color: blue;
-            color: white;
-        }
-
     .red1 {
         border-bottom: 3px solid;
         border-color: white;
@@ -101,18 +87,13 @@
     .td2 {
         color: gold;
     }
-
-    .input1 {
-        
-    }
 </style>
-
 
 <div class="div1">
     <h1>Prikaz fitnes centra</h1>
 
     <div class="div2">
-        <button onclick="location.href='@Url.Action("Index", "Posetilac")'" class="button1">Vrati se nazad</button>
+        <button onclick="location.href='@Url.Action("Index","Vlasnik")'" class="button1">Vrati se nazad</button>
     </div>
 
 </div>
@@ -152,7 +133,6 @@
                 <tr><td>Trajanje treninga:</td><td>@trening.TrajanjeTreninga</td></tr>
                 <tr><td>Vreme odrzavanja:</td><td>@trening.DatumiVreme</td></tr>
                 <tr><td>Posetioci:</td><td>@trening.PrijavljeniPosetioci.Count / @trening.MaksBrojPosetilaca</td></tr>
-                <tr><td colspan="2"><form method="post" action="/Posetilac/PrijavaNaTrening"> <input type="hidden" name="treningZaPrijavu" value="@trening.FitnesCentar.Naziv/@trening.Naziv" /><input class="button2" type="submit" value="Prijavi se na trening" /></form></td></tr>
             </table>
         }
     }
@@ -165,48 +145,38 @@
 @{
     foreach (var kom in ViewBag.Komentari)
     {
-        if (kom.FitnesCentar.Naziv == ViewBag.Naziv )
+        if (kom.FitnesCentar.Naziv == ViewBag.Naziv)
         {
-            if(kom.Odobren =="DA" || kom.Posetilac.KorIme == ViewBag.UlogovaniKorisnik.KorIme)
+            if (kom.Odobren == "DA")
             {
-               <table class="tabela2">
-                   <tr class="red1"><td>KORISNIK: </td><td>@kom.Posetilac.KorIme     </td><td>OCENA: </td><td>@kom.Ocena  zvezdica</td></tr>
-                   <tr><td class="td1" colspan="4"></td></tr>
-                   <tr><td class="td2" colspan="4">@kom.Tekst</td></tr>
-               </table>
-            }
-
-            
-
-        }
-    }
-}
-
-@{
-    foreach (var trening in ViewBag.GrupniTreninzi)
-    {
-        if (trening.FitnesCentar.Naziv == ViewBag.Naziv)
-        {
-            foreach (var korisnik in trening.PrijavljeniPosetioci)
-            {
-                if (korisnik.KorIme == ViewBag.UlogovaniKorisnik.KorIme && DateTime.Compare(trening.DatumiVreme, DateTime.Now) < 0)
-                {
-            <form action="/Posetilac/OstaviKomentar" method="post">
                 <table class="tabela2">
-                    <tr><th colspan="2">UNESI KOMENTAR</th></tr>
-                    <tr><td colspan="2"><input name="komentar" class="input1" size="50" /></td></tr>
-                    <tr><td>Ocena</td><td><select name="ocena"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td></tr>
-                    <tr><td colspan="2"><input type="hidden" name="fitnescentar" value="@ViewBag.Naziv" /><input class=" button1" type="submit" value="Ostavi komentar" /></td></tr>
+                    <tr class="red1"><td>KORISNIK: </td><td>@kom.Posetilac.KorIme     </td><td>OCENA: </td><td>@kom.Ocena  zvezdica</td></tr>
+                    <tr><td class="td1" colspan="4"></td></tr>
+                    <tr><td class="td2" colspan="4">@kom.Tekst</td></tr>
                 </table>
-            </form>
-                    return;
-                }
-                
             }
+            else if ( kom.Odobren=="ODBIJEN" && kom.FitnesCentar.Vlasnik.KorIme == ViewBag.Vlasnik.KorIme)
+            {
+                <table class="tabela2">
+                    <tr class="red1"><td>KORISNIK: </td><td>@kom.Posetilac.KorIme     </td><td>OCENA: </td><td>@kom.Ocena  zvezdica</td></tr>
+                    <tr><td class="td1" colspan="4"></td></tr>
+                    <tr><td class="td2" colspan="4">@kom.Tekst</td></tr>
+                </table>
 
-
+            }
+            else if (kom.FitnesCentar.Vlasnik.KorIme == ViewBag.UlogovanIme)
+            {
+                <table class="tabela2">
+                    <tr class="red1"><td>KORISNIK: </td><td>@kom.Posetilac.KorIme     </td><td>OCENA: </td><td>@kom.Ocena  zvezdica</td></tr>
+                    <tr><td class="td1" colspan="4"></td></tr>
+                    <tr><td class="td2" colspan="4">@kom.Tekst</td></tr>
+                    <tr><td colspan="3"><form action="/Vlasnik/OdobriKomentar" method="post"><input type="hidden" name="tekst" value="@kom.Tekst" /><input type="hidden" name="ocena" value="@kom.Ocena" /><input class="button1" type="submit" value="Odobri" /></form></td></tr>
+                    <tr><td colspan="3"><form action="/Vlasnik/OdbijKomentar" method="post"><input type="hidden" name="tekst" value="@kom.Tekst" /><input type="hidden" name="ocena" value="@kom.Ocena" /><input class="button1" type="submit" value="Odbij" /></form></td></tr>
+                </table>
+            }
 
         }
     }
 }
+
 

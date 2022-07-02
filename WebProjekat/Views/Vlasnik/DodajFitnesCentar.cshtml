@@ -1,0 +1,116 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "DodajFitnesCentar";
+}
+
+<html>
+
+<head>
+    <style>
+        html {
+            background-color: lightblue;
+        }
+
+        .div1 {
+            font-family: cursive;
+            font-style: italic;
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .tabela1 {
+            border: 5px solid;
+            background-color: black;
+            border-color: white;
+            color: white;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blank_row {
+            height: 10px
+        }
+
+        .div2 {
+            text-align: right;
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+        }
+
+            .button1:hover {
+                background-color: gold;
+                color: black;
+            }
+
+        .input1 {
+            background-color: silver;
+        }
+
+            .input1:hover {
+                background-color: white;
+            }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="div1">
+        <h1>Novi Fitnes Centar</h1>
+
+        <div class="div2">
+            <button onclick="location.href='@Url.Action("UpravljanjeFitnesCentrima","Vlasnik")'" class="button1">Vrati se nazad</button>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <form action="/Vlasnik/DodajNoviCentar" method="post">
+        <table class="tabela1">
+            <tr><td>Naziv:</td><td><input name="naziv" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td></td></tr>
+            <tr><td>Adresa:</td><td><input name="adresa" class="input1" type="text"  /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Godina otvaranja:</td><td><input name="godinaotvaranja" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Cena Mesecne Clanarine:</td><td><input name="cenamesecneclanarine" class="input1" type="text"  /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+
+            <tr><td>Cena Godisnje Clanrine:</td><td><input name="cenagodisnjeclanarine" class="input1" type="text"  /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Cena Jednog Treninga:</td><td><input name="cenajednogtreninga" class="input1" type="text"  /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Cena Grupnog Treninga:</td><td><input name="cenagrupnogtreninga" class="input1" type="text"  /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Cena Treninga Sa Trenerom:</td><td><input name="cenatreningasatrenerom" class="input1" type="text"  /></td></tr>
+
+            <tr class="blank_row"><td> </td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td colspan="2"><input type="submit" class="input1" value="Dodaj" /></td></tr>
+        </table>
+    </form>
+
+</body>
+</html>
+@{
+    if (TempData["Greska"] != null)
+    {
+        <script type="text/javascript">
+            alert("@TempData["Greska"]")
+        </script>
+        TempData["Greska"] = null;
+    }
+}
+
+
+

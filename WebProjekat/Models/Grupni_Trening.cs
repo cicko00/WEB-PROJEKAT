@@ -17,7 +17,7 @@ namespace WebProjekat.Models
         public DateTime DatumiVreme { get; set; }
         public int MaksBrojPosetilaca { get; set; }
         public List<Korisnik> PrijavljeniPosetioci { get; set; }
-
+        public string Izbrisan { get; set; }
         public string nazivFitnesCentra { get; set; }
         public string naziviPrijavljenihPosetioca{get;set;}
 
@@ -32,10 +32,11 @@ namespace WebProjekat.Models
             MaksBrojPosetilaca = maksBrojPosetilaca;
             PrijavljeniPosetioci = new List<Korisnik>() ;
         }
-
-        public Grupni_Trening()
+         
+        public Grupni_Trening() 
         {
             PrijavljeniPosetioci = new List<Korisnik>();
+            Izbrisan = "NE";
         }
 
 

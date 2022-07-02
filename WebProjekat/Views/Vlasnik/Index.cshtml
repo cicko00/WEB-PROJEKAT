@@ -1,6 +1,5 @@
 ﻿
 @{
-
     Layout = null;
     ViewBag.Title = "Index";
 }
@@ -91,8 +90,10 @@
         </h1>
         <div class="div2">
             <input class="registracija" type="button" value="Odjavi se" onclick="location.href='@Url.Action("Odjava","Home")'" />
-            <input class="registracija" type="button" value="Prikazi profil" onclick="location.href='@Url.Action("PrikaziProfil","Posetilac")'" />
-            <input class="registracija" type="button" value="Istorija treninga" onclick="location.href='@Url.Action("Istorija","Posetilac")'" />
+            <input class="registracija" type="button" value="Prikazi profil" onclick="location.href='@Url.Action("PrikaziProfil","Vlasnik")'" />
+            <input class="registracija" type="button" value="Zaposleni treneri" onclick="location.href='@Url.Action("ZaposleniTreneri","Vlasnik")'" />
+            <input class="registracija" type="button" value="Upravljanje fitnes centrima" onclick="location.href='@Url.Action("UpravljanjeFitnesCentrima","Vlasnik")'" />
+
         </div>
 
     </div>
@@ -105,12 +106,12 @@
         <tr><td class="polje1">Naziv</td><td class="polje1">Adresa</td><td class="polje1">Godina Otvaranja</td><td class="polje1"></td></tr>
         @foreach (var f in ViewBag.FitnesCentri)
         {
-            <tr><td>@f.Naziv</td><td>@f.Adresa</td><td>@f.GodinaOtvaranja</td><td><form method="get" action="/Posetilac/Prikaz"><input type="hidden" name="Naziv" value="@f.Naziv" /> <input class="registracija" type="submit" value="Detalji" /></form></td></tr>
+            <tr><td>@f.Naziv</td><td>@f.Adresa</td><td>@f.GodinaOtvaranja</td><td><form method="get" action="/Vlasnik/Prikaz"><input type="hidden" name="Naziv" value="@f.Naziv" /> <input class="registracija" type="submit" value="Detalji" /></form></td></tr>
         }
     </table>
     <br />
     <br />
-    <form action="/Posetilac/Sortiranje" method="post">
+    <form action="/Vlasnik/Sortiranje" method="post">
         <table class="tabela1">
             <tr><th colspan="5"><h2>PRETRAGA</h2></th></tr>
             <tr><td>Godina otvaranja:</td><td>od:</td><td><input class="input1" name="godinaOd" /></td><td>do:</td><td><input class="input1" name="godinaDo" /></td></tr>
@@ -141,3 +142,4 @@
         TempData["Greska"] = null;
     }
 }
+

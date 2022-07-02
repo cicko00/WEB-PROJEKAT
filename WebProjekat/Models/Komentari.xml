@@ -1,15 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Komentari>
   <Komentar>
+    <Tekst>i</Tekst>
+    <Ocena>3</Ocena>
+    <Odobren>NE</Odobren>
+    <nazivPosetioca>jova</nazivPosetioca>
+    <nazivFitnesCentra>FULL GYM FITNESS</nazivFitnesCentra>
+  </Komentar>
+  <Komentar>
     <Tekst>Zadovoljan sam</Tekst>
     <Ocena>5</Ocena>
-    <nazivPosetioca>Cicko</nazivPosetioca>
-    <nazivFitnesCentra>FULL GYM</nazivFitnesCentra>
+    <nazivPosetioca>cicko</nazivPosetioca>
+    <nazivFitnesCentra>FULL GYM FITNESS</nazivFitnesCentra>
+    <Odobren>NE</Odobren>
   </Komentar>
   <Komentar>
     <Tekst>dobro.jE</Tekst>
-    <Ocena>3</Ocena>
-    <nazivPosetioca>Cicko</nazivPosetioca>
-    <nazivFitnesCentra>FULL GYM</nazivFitnesCentra>
+    <Ocena>4</Ocena>
+    <nazivPosetioca>cicko</nazivPosetioca>
+    <nazivFitnesCentra>BEAST FITNESS</nazivFitnesCentra>
+    <Odobren>DA</Odobren>
+  </Komentar>
+  <Komentar>
+    <Tekst>dobro.jEeee</Tekst>
+    <Ocena>4</Ocena>
+    <nazivPosetioca>cicko</nazivPosetioca>
+    <nazivFitnesCentra>BEAST FITNESS</nazivFitnesCentra>
+    <Odobren>ODBIJEN</Odobren>
   </Komentar>
 </Komentari>

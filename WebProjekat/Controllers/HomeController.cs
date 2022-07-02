@@ -11,20 +11,27 @@ namespace WebProjekat.Controllers
     {
         public ActionResult Index()
         {
-
+            
             List<Korisnik> Korisnici = (List<Korisnik>)HttpContext.Application["Korisnici"];
 
 
-            List<Fitnes_Centar> FitnesCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
-
-            
-               
-            if(Session["FitnesCentri"] != null)
+            List<Fitnes_Centar> FitnesCentri = new List<Fitnes_Centar>();  
+            foreach(Fitnes_Centar fc in (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"])
             {
-                List<Fitnes_Centar> tempFitnesCentar = (List<Fitnes_Centar>)Session["FitnesCentri"];
+                if(fc.Izbrisan == "NE")
+                {
+                    FitnesCentri.Add(fc);
+                }
+            }
+            
+
+               
+            if(HttpContext.Session["fitnesCentri"] != null) 
+            {  
+                List<Fitnes_Centar> tempFitnesCentar = (List<Fitnes_Centar>)HttpContext.Session["fitnesCentri"];
                 ViewBag.FitnesCentri = tempFitnesCentar;
-                Session["FitnesCentri"] = null;
-                tempFitnesCentar = null;
+                HttpContext.Session["fitnesCentri"] = null;
+                tempFitnesCentar = null; 
                 return View();
             }
             ViewBag.FitnesCentri = FitnesCentri;
@@ -58,19 +65,22 @@ namespace WebProjekat.Controllers
                     if (k.Uloga == ULOGA.POSETILAC)
                     {
                         
-                        Session["PrijavljeniKorisnik"] = k;
+                        Session["PrijavljeniKorisnikIme"] = k.KorIme;
+                        Session["PrijavljeniKorisnikLozinka"] = k.Lozinka;
                         return RedirectToAction("Index", "Posetilac");
                     }
                     else if (k.Uloga == ULOGA.TRENER)
                     {
-                        
-                        Session["PrijavljeniKorisnik"] = k;
+
+                        Session["PrijavljeniKorisnikIme"] = k.KorIme;
+                        Session["PrijavljeniKorisnikLozinka"] = k.Lozinka;
                         return RedirectToAction("Index", "Trener");
                     }
                     else if (k.Uloga == ULOGA.VLASNIK)
                     {
-                        
-                        Session["PrijavljeniKorisnik"] = k;
+
+                        Session["PrijavljeniKorisnikIme"] = k.KorIme;
+                        Session["PrijavljeniKorisnikLozinka"] = k.Lozinka;
                         return RedirectToAction("Index", "Vlasnik");
                     }
                 }
@@ -86,10 +96,9 @@ namespace WebProjekat.Controllers
             List<Korisnik> Korisnici = (List<Korisnik>)HttpContext.Application["Korisnici"];
             List<Grupni_Trening> GrupniTreninzi = (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"];
             List<Fitnes_Centar> FitnesCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
-            List<Komentar> Komentari = (List<Komentar>)HttpContext.Application["Komentari"];
+            List<Komentar> Komentari =  (List<Komentar>)HttpContext.Application["Komentari"];
             
-            HttpContext.Application["GrupniTreninzi"] = GrupniTreninzi;
-            HttpContext.Application["Komentari"] = Komentari;
+            
 
             ViewData["GrupniTreninzi"] = GrupniTreninzi;
             ViewBag.Komentari = Komentari;
@@ -116,10 +125,19 @@ namespace WebProjekat.Controllers
         [HttpPost]
         public ActionResult Sortiranje(string godinaOd,string godinaDo,string nazivPretraga,string adresaPretraga,string sortiranjePo,string sortiranjeRedosled)
         {
-            Session["FitnesCentri"] = new List<Fitnes_Centar>();
+           HttpContext.Session["fitnesCentri"] = new List<Fitnes_Centar>();
             
             List<Fitnes_Centar> sviCentri = new List<Fitnes_Centar>();
-            sviCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
+            foreach( Fitnes_Centar fc in (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"])
+            {
+                if(fc.Izbrisan == "NE")
+                {
+                    Fitnes_Centar f = fc;
+                    sviCentri.Add(f);
+                }
+                
+                
+            }
             if (godinaOd.Trim() != String.Empty && Int32.TryParse(godinaOd.Trim(),out int a)==true)
             {
 
@@ -214,7 +232,7 @@ namespace WebProjekat.Controllers
                     }
                 }
             }
-            Session["FitnesCentri"] = sviCentri;
+            HttpContext.Session["fitnesCentri"] = sviCentri; 
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
@@ -252,7 +270,15 @@ namespace WebProjekat.Controllers
 
             Korisnik kor = new Korisnik(korime, lozinka, ime, prezime, (POL)Enum.Parse(typeof(POL), pol), email, DateTime.Parse(datumrodjenja), (ULOGA)Enum.Parse(typeof(ULOGA), uloga));
             ((List<Korisnik>)HttpContext.Application["Korisnici"]).Add(kor);
+            BazaPodataka.IzmeniKorisnike(kor);
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Odjava()
+        {
+            Session["PrijavljeniKorisnikIme"] = null;
+            Session["PrijavljeniKorisnikLozinka"] = null;
+            return RedirectToAction("Index","Home");
         }
     }
 }

@@ -185,12 +185,18 @@
     <Content Include="Views\Posetilac\PrikaziProfil.cshtml" />
     <Content Include="Views\Posetilac\Prikaz.cshtml" />
     <Content Include="Views\Posetilac\Istorija.cshtml" />
+    <Content Include="Views\Vlasnik\Index.cshtml" />
+    <Content Include="Views\Vlasnik\Prikaz.cshtml" />
+    <Content Include="Views\Vlasnik\IzmeniProfil.cshtml" />
+    <Content Include="Views\Vlasnik\PrikaziProfil.cshtml" />
+    <Content Include="Views\Vlasnik\UpravljanjeFitnesCentrima.cshtml" />
+    <Content Include="Views\Vlasnik\IzmeniFitnesCentar.cshtml" />
+    <Content Include="Views\Vlasnik\DodajFitnesCentar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Prijavljen\" />
     <Folder Include="Views\Trener\" />
-    <Folder Include="Views\Vlasnik\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
