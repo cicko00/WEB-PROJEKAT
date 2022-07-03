@@ -12,7 +12,7 @@ namespace WebProjekat.Models
 
         public string Naziv { get; set; } 
         public TIP_TRENINGA TipTreninga { get; set; }
-        public Fitnes_Centar FitnesCentar { get; set; }
+        public Fitnes_Centar FitnesCentar { get; set; }      
         public int TrajanjeTreninga { get; set; }
         public DateTime DatumiVreme { get; set; }
         public int MaksBrojPosetilaca { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Web; 
 
 namespace WebProjekat.Models
 {
@@ -9,9 +9,9 @@ namespace WebProjekat.Models
     {
         public Komentar()
         {
-            Odobren = "NE";
+            Odobren = "NE"; 
             
-        }
+        } 
 
         public Komentar(Korisnik posetilac, Fitnes_Centar fitnesCentar, string tekst, int ocena)  
         {

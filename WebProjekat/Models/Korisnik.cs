@@ -10,7 +10,7 @@ namespace WebProjekat.Models
     {
        public string KorIme { get; set; }
        public string Lozinka { get; set; }
-       public string Ime { get; set; }
+       public string Ime { get; set; }  
        public string Prezime { get; set; }
       public POL Pol { get; set; }
       public string Email { get; set; }
@@ -20,14 +20,14 @@ namespace WebProjekat.Models
       public List<Grupni_Trening> grupniTreninziTrener { get; set; }
         public Fitnes_Centar FitnesCentar { get; set; }
        public List<Fitnes_Centar>FitnesCentri { get; set; }
-        public string Blokiran { get; set; }
+        public string Blokiran { get; set; } 
 
       public string NazivifitnesCentaraVlasnik { get; set; }
-        public string fitnesCentarNaziv { get; set; }
-       public string naziviGrupnihTreningaTrener { get; set; } 
-        public string naziviGrupnihTreningaPosetilac { get; set; }
+        public string fitnesCentarNaziv { get; set; }   
+       public string naziviGrupnihTreningaTrener { get; set; }    
+        public string naziviGrupnihTreningaPosetilac { get; set; } 
          
-
+          
 
           
         public Korisnik()

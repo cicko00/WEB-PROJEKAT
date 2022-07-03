@@ -11,7 +11,29 @@ namespace WebProjekat.Controllers
     {
         public ActionResult Index()
         {
-            
+           
+            /*
+                          VLASNICI:
+                   KorIme:Perapera   lozinka:PERA123
+                   KorIme:jovajova   lozinka:JOVA123
+                   
+
+                           TRENERI: 
+                   KorIme:DULE       lozinka:DULEDULE
+                   KorIme:MARKO      lozinka:marko
+
+                           POSETIOCI:
+                   KorIme:Marija      lozinka:mmarija
+                   KorIme:Luka        lozinka:lule123
+                   KorIme:cile        lozinka:cile   
+                   KorIme:petar       lozinka:petar
+             
+             
+             
+             */
+
+
+
             List<Korisnik> Korisnici = (List<Korisnik>)HttpContext.Application["Korisnici"];
 
 

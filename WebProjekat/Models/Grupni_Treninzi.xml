@@ -1,39 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GrupniTreninzi>
   <GrupniTrening>
-    <Naziv>TRENING 1</Naziv>
-    <TipTreninga>CARDIO</TipTreninga>
+    <Izbrisan>NE</Izbrisan>
+    <Naziv>YOGA TRENING 1</Naziv>
+    <TipTreninga>YOGA</TipTreninga>
     <TrajanjeTreninga>60</TrajanjeTreninga>
-    <DatumiVreme>2022-08-04T12:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>8</MaksBrojPosetilaca>
-    <nazivFitnesCentra>GYMGYM NS</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
+    <DatumiVreme>2022-07-13T00:00:00</DatumiVreme>
+    <MaksBrojPosetilaca>4</MaksBrojPosetilaca>
+    <nazivFitnesCentra>TOP FITNESS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Marija/</naziviPrijavljenihPosetioca>
   </GrupniTrening>
   <GrupniTrening>
-    <Naziv>trening222</Naziv>
+    <Izbrisan>NE</Izbrisan>
+    <Naziv>TRENING NOGU</Naziv>
     <TipTreninga>BODY_PUMP</TipTreninga>
-    <TrajanjeTreninga>70</TrajanjeTreninga>
-    <DatumiVreme>2022-10-10T00:00:00</DatumiVreme>
-    <MaksBrojPosetilaca>5</MaksBrojPosetilaca>
-    <nazivFitnesCentra>GYMGYM NS</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
+    <TrajanjeTreninga>100</TrajanjeTreninga>
+    <DatumiVreme>2022-07-22T00:00:00</DatumiVreme>
+    <MaksBrojPosetilaca>3</MaksBrojPosetilaca>
+    <nazivFitnesCentra>MAX FIT NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Luka/cile/petar/</naziviPrijavljenihPosetioca>
   </GrupniTrening>
   <GrupniTrening>
-    <Naziv>YOGA trening</Naziv>
-    <TipTreninga>YOGA</TipTreninga>
-    <TrajanjeTreninga>70</TrajanjeTreninga>
+    <Izbrisan>NE</Izbrisan>
+    <Naziv>CARDIO VEZBE</Naziv>
+    <TipTreninga>CARDIO</TipTreninga>
+    <TrajanjeTreninga>75</TrajanjeTreninga>
+    <DatumiVreme>2022-08-22T00:00:00</DatumiVreme>
+    <MaksBrojPosetilaca>7</MaksBrojPosetilaca>
+    <nazivFitnesCentra>MAX FIT NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>petar/</naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Izbrisan>NE</Izbrisan>
+    <Naziv>TRENING RUKU</Naziv>
+    <TipTreninga>BODY_PUMP</TipTreninga>
+    <TrajanjeTreninga>90</TrajanjeTreninga>
     <DatumiVreme>2022-02-02T00:00:00</DatumiVreme>
-    <MaksBrojPosetilaca>5</MaksBrojPosetilaca>
-    <nazivFitnesCentra>GYMGYM NS</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
+    <MaksBrojPosetilaca>3</MaksBrojPosetilaca>
+    <nazivFitnesCentra>MAX FIT NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Luka/cile/petar/</naziviPrijavljenihPosetioca>
   </GrupniTrening>
   <GrupniTrening>
-    <Naziv>BBBBBB</Naziv>
-    <TipTreninga>YOGA</TipTreninga>
-    <TrajanjeTreninga>22</TrajanjeTreninga>
-    <DatumiVreme>2022-08-08T12:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>5</MaksBrojPosetilaca>
-    <nazivFitnesCentra>CICKO GYM</nazivFitnesCentra>
+    <Izbrisan>NE</Izbrisan>
+    <Naziv>TRENING GRUDI</Naziv>
+    <TipTreninga>BODY_PUMP</TipTreninga>
+    <TrajanjeTreninga>120</TrajanjeTreninga>
+    <DatumiVreme>2022-03-03T00:00:00</DatumiVreme>
+    <MaksBrojPosetilaca>3</MaksBrojPosetilaca>
+    <nazivFitnesCentra>MAX FIT NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Luka/cile/petar/</naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>BURN FAT training</Naziv>
+    <TipTreninga>LESS_MILLS_TONE</TipTreninga>
+    <TrajanjeTreninga>80</TrajanjeTreninga>
+    <DatumiVreme>2022-07-15T13:45:00</DatumiVreme>
+    <MaksBrojPosetilaca>6</MaksBrojPosetilaca>
+    <nazivFitnesCentra>TOP FITNESS</nazivFitnesCentra>
     <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+    <Izbrisan>DA</Izbrisan>
   </GrupniTrening>
 </GrupniTreninzi>

@@ -55,7 +55,7 @@ namespace WebProjekat.Controllers
         {
             if (Session["PrijavljeniKorisnikIme"] == null || Session["PrijavljeniKorisnikLozinka"] == null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home"); 
             }
 
 

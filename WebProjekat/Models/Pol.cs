@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebProjekat.Models
 {
-    public  enum POL
+    public  enum POL 
     {
          
             MUSKI, ZENSKI  

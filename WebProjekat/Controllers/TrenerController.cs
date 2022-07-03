@@ -510,19 +510,19 @@ namespace WebProjekat.Controllers
             if (naziv.Trim() == "" || tiptreninga.Trim() == "" || trajanjetreninga.Trim() == "" || datumivreme.Trim() == "" || maksbrojposetilaca.Trim() == "")
             {
                 TempData["Greska"] = "Niste uneli sva polja";
-                return RedirectToAction("IzmeniTrening", "Trener");
+                return RedirectToAction("PregledTreninga", "Trener");
             }
 
             if (Int32.TryParse(trajanjetreninga, out int TRAJANJETRENINGA) == false || Int32.TryParse(maksbrojposetilaca, out int MAKSBROJPOSETILACA) == false || DateTime.TryParse(datumivreme, out DateTime dt) == false)
             {
                 TempData["Greska"] = "Niste dobro popunili sva polja";
-                return RedirectToAction("IzmeniTrening", "Trener");
+                return RedirectToAction("PregledTreninga", "Trener");
             }
 
             if (DateTime.Compare(dt, DateTime.Now.AddDays(3)) < 0)
             {
                 TempData["Greska"] = "Trening se mora zakazati bar 3 dana u napred";
-                return RedirectToAction("IzmeniTrening", "Trener");
+                return RedirectToAction("PregledTreninga", "Trener");
             }
 
             
@@ -535,7 +535,7 @@ namespace WebProjekat.Controllers
 
                     TempData["Greska"] = "Trening sa tim nazivom vec postoji u fitnes centru";
 
-                    return RedirectToAction("IzmeniTrening", "Trener");
+                    return RedirectToAction("PregledTreninga", "Trener");
                 }
 
             }
@@ -773,8 +773,9 @@ namespace WebProjekat.Controllers
                     }
 
                     trening.Izbrisan = "DA";
+                    BazaPodataka.IzmeniTreninge(trening, trening);
                     break;
-                }
+                }        
             }
 
             return RedirectToAction("PregledTreninga","Trener");

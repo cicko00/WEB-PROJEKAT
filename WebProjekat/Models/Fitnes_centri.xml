@@ -1,27 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FitnesCentri>
   <FitnesCentar>
-    <Naziv>CICKO GYM</Naziv>
-    <Adresa>Beogradski Kej 39</Adresa>
-    <GodinaOtvaranja>2022</GodinaOtvaranja>
-    <CenaMesecneClanarine>2000</CenaMesecneClanarine>
-    <CenaGodisnjeClanarine>12000</CenaGodisnjeClanarine>
+    <Naziv>TOP FITNESS</Naziv>
+    <Adresa>Maksima Gorkog 44</Adresa>
+    <GodinaOtvaranja>2014</GodinaOtvaranja>
+    <CenaMesecneClanarine>3000</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>16000</CenaGodisnjeClanarine>
     <CenaGrupnogTreninga>800</CenaGrupnogTreninga>
     <CenaJednogTreninga>500</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>1200</CenaTreningaSaTrenerom>
-    <nazivVlasnika>Cvijetin</nazivVlasnika>
+    <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
+    <nazivVlasnika>Perapera</nazivVlasnika>
     <Izbrisan>NE</Izbrisan>
   </FitnesCentar>
   <FitnesCentar>
-    <Naziv>GYMGYM NS</Naziv>
-    <Adresa>Beogradski kej 39</Adresa>
-    <GodinaOtvaranja>2022</GodinaOtvaranja>
-    <CenaMesecneClanarine>2000</CenaMesecneClanarine>
-    <CenaGodisnjeClanarine>12000</CenaGodisnjeClanarine>
-    <CenaGrupnogTreninga>1000</CenaGrupnogTreninga>
-    <CenaJednogTreninga>700</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>1200</CenaTreningaSaTrenerom>
-    <nazivVlasnika>Cvijetin</nazivVlasnika>
+    <Naziv>MAX FIT NS</Naziv>
+    <Adresa>Geteova 66</Adresa>
+    <GodinaOtvaranja>2021</GodinaOtvaranja>
+    <CenaMesecneClanarine>2200</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>13500</CenaGodisnjeClanarine>
+    <CenaGrupnogTreninga>600</CenaGrupnogTreninga>
+    <CenaJednogTreninga>400</CenaJednogTreninga>
+    <CenaTreningaSaTrenerom>800</CenaTreningaSaTrenerom>
+    <nazivVlasnika>jovajova</nazivVlasnika>
     <Izbrisan>NE</Izbrisan>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>AAAA</Naziv>
+    <Adresa>Vuka Karadzica 11</Adresa>
+    <GodinaOtvaranja>2022</GodinaOtvaranja>
+    <CenaMesecneClanarine>2200</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>13500</CenaGodisnjeClanarine>
+    <CenaGrupnogTreninga>800</CenaGrupnogTreninga>
+    <CenaJednogTreninga>400</CenaJednogTreninga>
+    <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
+    <nazivVlasnika>Perapera</nazivVlasnika>
+    <Izbrisan>DA</Izbrisan>
   </FitnesCentar>
 </FitnesCentri>

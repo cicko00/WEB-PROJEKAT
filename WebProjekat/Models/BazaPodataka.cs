@@ -240,7 +240,8 @@ namespace WebProjekat.Models
            foreach(var element in root.Elements())
             {
                 Korisnik k = new Korisnik();
-                k.KorIme = element.Element("KorIme").Value;
+               
+                k.KorIme = element.Element("KorIme").Value;   
                 k.Blokiran = element.Element("Blokiran").Value;
                 k.Lozinka = element.Element("Lozinka").Value;
                 k.Ime = element.Element("Ime").Value;
@@ -295,6 +296,7 @@ namespace WebProjekat.Models
             foreach (var element in root.Elements())
             {
                 Grupni_Trening gt = new Grupni_Trening();
+                gt.Izbrisan = element.Element("Izbrisan").Value;
                 gt.Naziv = element.Element("Naziv").Value;
                 gt.DatumiVreme = DateTime.Parse(element.Element("DatumiVreme").Value);
                 gt.TipTreninga = (TIP_TRENINGA)Enum.Parse(typeof(TIP_TRENINGA), element.Element("TipTreninga").Value);
@@ -400,7 +402,7 @@ namespace WebProjekat.Models
 
                 }
             }
-            root.Add(new XElement("GrupniTrening", new XElement("Naziv", novi.Naziv), new XElement("TipTreninga", novi.TipTreninga), new XElement("TrajanjeTreninga", novi.TrajanjeTreninga), new XElement("DatumiVreme", novi.DatumiVreme), new XElement("MaksBrojPosetilaca", novi.MaksBrojPosetilaca), new XElement("nazivFitnesCentra", novi.nazivFitnesCentra), new XElement("naziviPrijavljenihPosetioca", novi.naziviPrijavljenihPosetioca)));
+            root.Add(new XElement("GrupniTrening", new XElement("Naziv", novi.Naziv), new XElement("TipTreninga", novi.TipTreninga), new XElement("TrajanjeTreninga", novi.TrajanjeTreninga), new XElement("DatumiVreme", novi.DatumiVreme), new XElement("MaksBrojPosetilaca", novi.MaksBrojPosetilaca), new XElement("nazivFitnesCentra", novi.nazivFitnesCentra), new XElement("naziviPrijavljenihPosetioca", novi.naziviPrijavljenihPosetioca),new XElement("Izbrisan",novi.Izbrisan)));
             xml.Save("C:\\Users\\Cvijetin Glisic\\Desktop\\WEB_Projekat\\WebProjekat\\WebProjekat\\Models\\Grupni_Treninzi.xml");
 
 

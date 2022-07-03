@@ -1,4 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Komentari>
- 
+  <Komentar>
+    <Tekst>JAKO SAM ZADOVOLJAN</Tekst>
+    <Ocena>5</Ocena>
+    <nazivPosetioca>cile</nazivPosetioca>
+    <nazivFitnesCentra>MAX FIT NS</nazivFitnesCentra>
+    <Odobren>DA</Odobren>
+  </Komentar>
+  <Komentar>
+    <Tekst>DOBAR FITNES CENTAR</Tekst>
+    <Ocena>3</Ocena>
+    <nazivPosetioca>Luka</nazivPosetioca>
+    <nazivFitnesCentra>MAX FIT NS</nazivFitnesCentra>
+    <Odobren>DA</Odobren>
+  </Komentar>
 </Komentari>
