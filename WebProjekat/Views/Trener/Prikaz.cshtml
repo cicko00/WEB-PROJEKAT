@@ -1,0 +1,158 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Prikaz";
+}
+
+<style>
+    html {
+        background-color: lightblue;
+    }
+
+    .div1 {
+        font-family: cursive;
+        font-style: italic;
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tabela1 {
+        border: 5px solid;
+        background-color: black;
+        border-color: white;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tabela2 {
+        border: 5px solid;
+        background-color: black;
+        border-color: white;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+
+    .blank_row {
+        height: 10px
+    }
+
+    .div2 {
+        text-align: right;
+    }
+
+    .div3 {
+        background-color: black;
+        color: gold;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 50%;
+    }
+
+    .div4 {
+        background-color: black;
+        color: darkblue;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 50%;
+    }
+
+    .button1 {
+        background-color: black;
+        color: white;
+    }
+
+        .button1:hover {
+            background-color: gold;
+            color: black;
+        }
+
+    .red1 {
+        border-bottom: 3px solid;
+        border-color: white;
+    }
+
+    .td1 {
+        height: 20px;
+    }
+
+    .td2 {
+        color: gold;
+    }
+</style>
+
+<div class="div1">
+    <h1>Prikaz fitnes centra</h1>
+
+    <div class="div2">
+        <button onclick="location.href='@Url.Action("Index","Trener")'" class="button1">Vrati se nazad</button>
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+
+<table class="tabela1">
+    <tr><td>NAZIV</td><td>@ViewBag.Naziv</td></tr>
+    <tr><td>ADRESA</td><td>@ViewBag.Adresa</td></tr>
+    <tr><td>VLASNIK</td><td>@ViewBag.Vlasnik.Ime @ViewBag.Vlasnik.Prezime </td></tr>
+    <tr><td>GODINA OTVARANJA</td><td>@ViewBag.GodinaOtvaranja</td></tr>
+    <tr><td>CENA MESECNE CLANARINE</td><td>@ViewBag.CenaMesecneClanarine</td></tr>
+    <tr><td>CENA GODISNJE CLANARINE</td><td>@ViewBag.CenaGodisnjeClanarine</td></tr>
+    <tr><td>CENA JEDNOG TRENINGA</td><td>@ViewBag.CenaJednogTreninga</td></tr>
+    <tr><td>CENA GRUPNOG TRENINGA</td><td>@ViewBag.CenaGrupnogTreninga</td></tr>
+    <tr><td>CENA TRENINGA SA TRENEROM</td><td>@ViewBag.CenaTreningaSaTrenerom</td></tr>
+
+    <tr><td></td></tr>
+
+</table>
+
+<br />
+<br />
+<div class="div3"><h2>GRUPNI TRENINZI</h2></div>
+
+@{
+
+    foreach (var trening in ViewBag.GrupniTreninzi)
+    {
+        if (trening.FitnesCentar.Naziv == ViewBag.Naziv)
+        {
+            <table class="tabela1">
+                <tr><td>Naziv:</td><td>@trening.Naziv</td></tr>
+                <tr><td>Tip treninga:</td><td>@trening.TipTreninga.ToString()</td></tr>
+                <tr><td>Trajanje treninga:</td><td>@trening.TrajanjeTreninga</td></tr>
+                <tr><td>Vreme odrzavanja:</td><td>@trening.DatumiVreme</td></tr>
+                <tr><td>Posetioci:</td><td>@trening.PrijavljeniPosetioci.Count / @trening.MaksBrojPosetilaca</td></tr>
+            </table>
+        }
+    }
+}
+
+<br />
+<br />
+<br />
+<div class="div4"><h2>KOMENTARI</h2></div>
+@{
+    foreach (var kom in ViewBag.Komentari)
+    {
+        if (kom.FitnesCentar.Naziv == ViewBag.Naziv && kom.Odobren == "DA")
+        {
+            <table class="tabela2">
+                <tr class="red1"><td>KORISNIK: </td><td>@kom.Posetilac.KorIme     </td><td>OCENA: </td><td>@kom.Ocena  zvezdica</td></tr>
+                <tr><td class="td1" colspan="4"></td></tr>
+                <tr><td class="td2" colspan="4">@kom.Tekst</td></tr>
+            </table>
+        }
+    }
+}
+

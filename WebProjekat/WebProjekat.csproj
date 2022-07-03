@@ -194,11 +194,14 @@
     <Content Include="Views\Vlasnik\DodajFitnesCentar.cshtml" />
     <Content Include="Views\Vlasnik\ZaposleniTreneri.cshtml" />
     <Content Include="Views\Vlasnik\RegistrujNovogTrenera.cshtml" />
+    <Content Include="Views\Trener\Index.cshtml" />
+    <Content Include="Views\Trener\Prikaz.cshtml" />
+    <Content Include="Views\Trener\PrikaziProfil.cshtml" />
+    <Content Include="Views\Trener\IzmeniProfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Prijavljen\" />
-    <Folder Include="Views\Trener\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

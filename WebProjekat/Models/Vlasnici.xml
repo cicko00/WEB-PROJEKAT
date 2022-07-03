@@ -136,21 +136,6 @@
     <NazivifitnesCentaraVlasnik>CICKO  GYM/</NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
-    <KorIme>Marko</KorIme>
-    <Lozinka>Marko</Lozinka>
-    <Blokiran>NE</Blokiran>
-    <Ime>Marko</Ime>
-    <Prezime>Markovic</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>m@hotmail.com</Email>
-    <DatumRodjenja>2001-07-13T00:00:00</DatumRodjenja>
-    <Uloga>TRENER</Uloga>
-    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
     <KorIme>Milos</KorIme>
     <Lozinka>Milos</Lozinka>
     <Ime>Milos</Ime>
@@ -164,5 +149,20 @@
     <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
     <Blokiran>DA</Blokiran>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>MARKO</KorIme>
+    <Lozinka>Marko</Lozinka>
+    <Ime>Marko</Ime>
+    <Prezime>Markovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>m@hotmail.com</Email>
+    <DatumRodjenja>2001-07-13T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+    <Blokiran>NE</Blokiran>
   </Korisnik>
 </Korisnici>

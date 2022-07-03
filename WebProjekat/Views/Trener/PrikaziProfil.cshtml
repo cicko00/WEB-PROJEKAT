@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "PrikaziProfil";
+    Layout = null;
+}
+
+<html>
+
+<head>
+    <style>
+        html {
+            background-color: lightblue;
+        }
+
+        .div1 {
+            font-family: cursive;
+            font-style: italic;
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .tabela1 {
+            border: 5px solid;
+            background-color: black;
+            border-color: white;
+            color: white;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blank_row {
+            height: 10px
+        }
+
+        .div2 {
+            text-align: right;
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+        }
+
+            .button1:hover {
+                background-color: gold;
+                color: black;
+            }
+
+        .button2 {
+            background-color: black;
+            border: 3px solid;
+            border-color: red;
+            color: white;
+        }
+
+            .button2:hover {
+                background-color: red;
+                color: gold;
+            }
+
+        .boja1 {
+            color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="div1">
+        <h1 class="boja1">IZMENI PROFIL</h1>
+
+        <div class="div2">
+            <button onclick="location.href='@Url.Action("Index","Trener")'" class="button1">Vrati se nazad</button>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+
+    <table class="tabela1">
+        <tr><th colspan="2"><h3>Izmena podataka</h3></th></tr>
+
+        <tr><td>Korisnicko ime:</td><td> @ViewBag.KorisnikZaPrikaz.KorIme</td></tr>
+        <tr class="blank_row"><td></td></tr>
+        <tr><td>Lozinka:</td><td> @ViewBag.KorisnikZaPrikaz.Lozinka</td></tr>
+        <tr class="blank_row"><td> </td></tr>
+
+        <tr class="blank_row"><td> </td></tr>
+        <tr><td>Ime:</td><td> @ViewBag.KorisnikZaPrikaz.Ime</td></tr>
+        <tr class="blank_row"><td> </td></tr>
+
+        <tr><td>Prezime:</td><td> @ViewBag.KorisnikZaPrikaz.Prezime</td></tr>
+        <tr class="blank_row"><td> </td></tr>
+        <tr><td>Pol:</td><td>@ViewBag.KorisnikZaPrikaz.Pol</td></tr>
+        <tr class="blank_row"><td> </td></tr>
+        <tr><td>Email:</td><td> @ViewBag.KorisnikZaPrikaz.Email</td></tr>
+        <tr class="blank_row"><td> </td></tr>
+        <tr><td>Datum rodjenja:</td><td> @ViewBag.KorisnikZaPrikaz.DatumRodjenja.ToString().Substring(0, 9)</td></tr>
+        <tr class="blank_row"><td> </td></tr>
+        <tr class="blank_row"><td> </td></tr>
+        <tr><td colspan="2"><button onclick="location.href='@Url.Action("IzmeniProfil","Trener")'" class="button2">IzmeniProfil</button></td></tr>
+    </table>
+
+
+</body>
+</html>
+@{
+    if (TempData["Greska"] != null)
+    {
+        <script type="text/javascript">
+            alert("@TempData["Greska"]")
+        </script>
+        TempData["Greska"] = null;
+    }
+}
+
+
+
