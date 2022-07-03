@@ -10,6 +10,7 @@ namespace WebProjekat.Models
         public Komentar()
         {
             Odobren = "NE";
+            
         }
 
         public Komentar(Korisnik posetilac, Fitnes_Centar fitnesCentar, string tekst, int ocena)
@@ -17,7 +18,7 @@ namespace WebProjekat.Models
             Posetilac = posetilac; 
             FitnesCentar = fitnesCentar;
             Tekst = tekst; 
-            Ocena = ocena; 
+            Ocena = ocena;  
         }
           
          

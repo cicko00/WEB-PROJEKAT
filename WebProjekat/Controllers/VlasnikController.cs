@@ -674,6 +674,9 @@ namespace WebProjekat.Controllers
                                 {
                                     fc.Vlasnik = k;
                                     fc.nazivVlasnika = k.KorIme;
+                                    k.FitnesCentri.Add(fc);
+                                    k.NazivifitnesCentaraVlasnik =k.NazivifitnesCentaraVlasnik+ fc.Naziv + "/";
+                                    BazaPodataka.IzmeniKorisnike(k);
                                 }
     
                    }
@@ -687,7 +690,121 @@ namespace WebProjekat.Controllers
 
         }
 
+        public ActionResult ZaposleniTreneri()
+        {
+            Korisnik vlasnik=null;
+            List<Korisnik> treneri = new List<Korisnik>();
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if(k.KorIme==(string)Session["PrijavljeniKorisnikIme"] && k.Lozinka == (string)Session["PrijavljeniKorisnikLozinka"])
+                {
+                    vlasnik = k;
+                    break;
+                }
+            }
 
+            Session["Vlasnik"] = vlasnik;
+
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if (k.Uloga == ULOGA.TRENER)
+                {
+                    foreach(Fitnes_Centar fc in vlasnik.FitnesCentri)
+                    {
+                        if (k.FitnesCentar.Naziv == fc.Naziv && k.Blokiran =="NE")
+                            treneri.Add(k);
+                    }
+                }
+            }
+
+            ViewBag.Treneri = treneri;
+            ViewBag.Vlasnik = (Korisnik)Session["Vlasnik"];
+
+               
+            
+            return View();
+        }
+
+        public ActionResult RegistrujNovogTrenera()
+        {
+            ViewBag.Vlasnik = (Korisnik)Session["Vlasnik"];
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DodajTrenera(string korime, string lozinka, string ponlozinka, string ime, string prezime, string pol, string email, string datumrodjenja,string nazivfc)
+        {
+
+            if (korime.Trim() == "" || lozinka.Trim() == "" || ponlozinka.Trim() == "" || ime.Trim() == "" || prezime.Trim() == "" || pol.Trim() == "" || email.Trim() == "" || datumrodjenja.Trim() == "")
+            {
+                TempData["Greska"] = "Niste uneli sva polja";
+                return RedirectToAction("RegistrujNovogTrenera", "Vlasnik");
+            }
+
+            if (lozinka != ponlozinka)
+            {
+
+                TempData["Greska"] = "Lozinka i ponovljen unos lozinke se ne poklapaju";
+
+                return RedirectToAction("RegistrujNovogTrenera", "Vlasnik");
+            }
+
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if (k.KorIme == korime)
+                {
+
+                    TempData["Greska"] = "Korisnicko ime vec postoji";
+
+                    return RedirectToAction("RegistrujNovogTrenera", "Vlasnik");
+                }
+                else if (k.Lozinka == lozinka)
+                {
+                    TempData["Greska"] = "Lozinka vec postoji";
+                    return RedirectToAction("RegistrujNovogTrenera", "Vlasnik");
+                }
+            }
+
+            Korisnik kor = new Korisnik();
+            kor.KorIme = korime;
+            kor.Lozinka = lozinka;
+            kor.Ime = ime;
+            kor.Prezime = prezime;
+            kor.Pol = (POL)Enum.Parse(typeof(POL), pol);
+            kor.Email = email;
+            kor.DatumRodjenja = DateTime.Parse(datumrodjenja);
+            kor.Blokiran = "NE";
+            kor.Uloga = ULOGA.TRENER;
+            kor.grupniTreninziTrener = new List<Grupni_Trening>();
+            foreach(Fitnes_Centar centar in (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"])
+            {
+                if (centar.Naziv == nazivfc.Trim())
+                {
+                    kor.FitnesCentar = centar;
+                    kor.fitnesCentarNaziv = centar.Naziv;
+                    break;
+                }
+            }
+            ((List<Korisnik>)HttpContext.Application["Korisnici"]).Add(kor);
+            BazaPodataka.IzmeniKorisnike(kor);
+            return RedirectToAction("ZaposleniTreneri", "Vlasnik");
+
+
+        }
+
+        [HttpPost]
+        public ActionResult BlokirajTrenera(string korime)
+        {
+            foreach(Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if(k.KorIme == korime)
+                {
+                    k.Blokiran = "DA";
+                    BazaPodataka.IzmeniKorisnike(k);
+                }
+            }
+            return RedirectToAction("ZaposleniTreneri","Vlasnik");
+        }
 
     }
 }

@@ -36,6 +36,10 @@ namespace WebProjekat.Models
             grupniTreninziTrener = new List<Grupni_Trening>();
             FitnesCentri = new List<Fitnes_Centar>();
             Blokiran = "NE";
+            NazivifitnesCentaraVlasnik = "";
+            fitnesCentarNaziv = "";
+            naziviGrupnihTreningaTrener = "";
+            naziviGrupnihTreningaPosetilac = "";
         }
        public Korisnik(string korime, string lozinka, string ime,string prezime,POL p,string email,DateTime datumrodjenja,ULOGA u){
             KorIme = korime;

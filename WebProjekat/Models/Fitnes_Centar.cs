@@ -44,6 +44,7 @@ namespace WebProjekat.Models
         public Fitnes_Centar()
         {
             Izbrisan = "NE";
+            nazivVlasnika = "";
         }
     }
 }

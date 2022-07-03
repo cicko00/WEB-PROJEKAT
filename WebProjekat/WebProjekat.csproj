@@ -192,6 +192,8 @@
     <Content Include="Views\Vlasnik\UpravljanjeFitnesCentrima.cshtml" />
     <Content Include="Views\Vlasnik\IzmeniFitnesCentar.cshtml" />
     <Content Include="Views\Vlasnik\DodajFitnesCentar.cshtml" />
+    <Content Include="Views\Vlasnik\ZaposleniTreneri.cshtml" />
+    <Content Include="Views\Vlasnik\RegistrujNovogTrenera.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

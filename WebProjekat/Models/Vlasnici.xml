@@ -3,6 +3,7 @@
   <Korisnik>
     <KorIme>Perapera</KorIme>
     <Lozinka>PERA123</Lozinka>
+    <Blokiran>NE</Blokiran>
     <Ime>Pera</Ime>
     <Prezime>Peric</Prezime>
     <Pol>MUSKI</Pol>
@@ -17,6 +18,7 @@
   <Korisnik>
     <KorIme>jova</KorIme>
     <Lozinka>jova</Lozinka>
+    <Blokiran>NE</Blokiran>
     <Ime>Jovan</Ime>
     <Prezime>Jovic</Prezime>
     <Pol>MUSKI</Pol>
@@ -31,6 +33,7 @@
   <Korisnik>
     <KorIme>janko</KorIme>
     <Lozinka>janko</Lozinka>
+    <Blokiran>NE</Blokiran>
     <Ime>Pera</Ime>
     <Prezime>Peric</Prezime>
     <Pol>MUSKI</Pol>
@@ -45,6 +48,7 @@
   <Korisnik>
     <KorIme>jovajova</KorIme>
     <Lozinka>JOVA123</Lozinka>
+    <Blokiran>NE</Blokiran>
     <Ime>jova</Ime>
     <Prezime>Jovic</Prezime>
     <Pol>MUSKI</Pol>
@@ -59,6 +63,7 @@
   <Korisnik>
     <KorIme>cicko</KorIme>
     <Lozinka>cicko</Lozinka>
+    <Blokiran>NE</Blokiran>
     <Ime>Cvijetin</Ime>
     <Prezime>Glisic</Prezime>
     <Pol>MUSKI</Pol>
@@ -71,8 +76,24 @@
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
+    <KorIme>coa</KorIme>
+    <Lozinka>coa</Lozinka>
+    <Blokiran>NE</Blokiran>
+    <Ime>Aca</Ime>
+    <Prezime>Acic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>coa@gmail.com</Email>
+    <DatumRodjenja>2002-02-05T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <naziviGrupnihTreningaPosetilac />
+    <naziviGrupnihTreningaTrener />
+    <fitnesCentarNaziv>GYMGYM</fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik />
+  </Korisnik>
+  <Korisnik>
     <KorIme>Ana</KorIme>
     <Lozinka>anaana</Lozinka>
+    <Blokiran>NE</Blokiran>
     <Ime>Ana</Ime>
     <Prezime>Jovanovic</Prezime>
     <Pol>MUSKI</Pol>
@@ -82,6 +103,66 @@
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>GYMGYM/</NazivifitnesCentaraVlasnik>
+    <NazivifitnesCentaraVlasnik>GYMGYM/TOP GYM Novi Sad/</NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>nikola</KorIme>
+    <Lozinka>nikola</Lozinka>
+    <Blokiran>NE</Blokiran>
+    <Ime>Nikola</Ime>
+    <Prezime>Nikic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>nikola@gmail.com</Email>
+    <DatumRodjenja>1998-06-15T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>TOP GYM Novi Sad</fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>Cvijetin</KorIme>
+    <Lozinka>Cvijetin</Lozinka>
+    <Blokiran>NE</Blokiran>
+    <Ime>Cvijetin</Ime>
+    <Prezime>Glisic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>ckoci@gmail.com</Email>
+    <DatumRodjenja>2000-07-03T00:00:00</DatumRodjenja>
+    <Uloga>VLASNIK</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik>CICKO  GYM/</NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>Marko</KorIme>
+    <Lozinka>Marko</Lozinka>
+    <Blokiran>NE</Blokiran>
+    <Ime>Marko</Ime>
+    <Prezime>Markovic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>m@hotmail.com</Email>
+    <DatumRodjenja>2001-07-13T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>Milos</KorIme>
+    <Lozinka>Milos</Lozinka>
+    <Ime>Milos</Ime>
+    <Prezime>Misic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>miki@gmail.com</Email>
+    <DatumRodjenja>1992-07-19T00:00:00</DatumRodjenja>
+    <Uloga>TRENER</Uloga>
+    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+    <Blokiran>DA</Blokiran>
   </Korisnik>
 </Korisnici>

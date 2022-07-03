@@ -1,0 +1,131 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "RegistrujNovogTrenera";
+}
+
+
+<html>
+
+<head>
+    <style>
+        html {
+            background-color: lightblue;
+        }
+
+        .div1 {
+            font-family: cursive;
+            font-style: italic;
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .tabela1 {
+            border: 5px solid;
+            background-color: black;
+            border-color: white;
+            color: white;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blank_row {
+            height: 10px
+        }
+
+        .div2 {
+            text-align: right;
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+        }
+
+            .button1:hover {
+                background-color: gold;
+                color: black;
+            }
+
+        .input1 {
+            background-color: silver;
+        }
+
+            .input1:hover {
+                background-color: white;
+            }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="div1">
+        <h1>Novi trener</h1>
+
+        <div class="div2">
+            <button onclick="location.href='@Url.Action("ZaposleniTreneri","Vlasnik")'" class="button1">Vrati se nazad</button>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <form action="/Vlasnik/DodajTrenera" method="post">
+        <table class="tabela1">
+            <tr><th colspan="2"><h3>Registracija</h3></th></tr>
+
+            <tr><td>Korisnicko ime:</td><td><input name="korime" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td></td></tr>
+            <tr><td>Lozinka:</td><td><input name="lozinka" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Ponovite lozinku:</td><td><input name="ponlozinka" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Ime:</td><td><input name="ime" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+
+            <tr><td>Prezime:</td><td><input name="prezime" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Pol:</td><td><select name="pol" class="input1"><option>MUSKI</option><option>ZENSKI</option></select></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Email:</td><td><input name="email" class="input1" type="email" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Datum Rodjenja:</td><td><input name="datumrodjenja" class="input1" type="date" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr>
+                <td>Fitnes Centar:</td>
+                <td>
+                    <select name="nazivfc" class="input1" type="date">
+                        @foreach (var fc in ViewBag.Vlasnik.FitnesCentri)
+                        {
+                            <option>@fc.Naziv</option>
+                        }
+
+                    </select>
+                </td>
+            </tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td colspan="2"><input type="submit" class="input1" value="Registruj" /></td></tr>
+        </table>
+    </form>
+
+</body>
+</html>
+@{
+    if (TempData["Greska"] != null)
+    {
+        <script type="text/javascript">
+            alert("@TempData["Greska"]")
+        </script>
+        TempData["Greska"] = null;
+    }
+}
+
+
+

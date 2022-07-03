@@ -1,0 +1,140 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "ZaposleniTreneri";
+}
+
+<style>
+    html {
+        background-color: lightblue;
+    }
+
+    .div1 {
+        font-family: cursive;
+        font-style: italic;
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tabela1 {
+        border: 5px solid;
+        background-color: black;
+        border-color: white;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tabela2 {
+        border: 5px solid;
+        background-color: black;
+        border-color: white;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+    }
+
+    .blank_row {
+        height: 10px
+    }
+
+    .div2 {
+        text-align: right;
+    }
+
+    .div3 {
+        background-color: black;
+        color: gold;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 50%;
+    }
+
+    .div4 {
+        background-color: black;
+        color: darkblue;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 50%;
+    }
+
+    .button1 {
+        background-color: black;
+        color: white;
+        border: 3px solid;
+        border-color: darkgray;
+    }
+
+        .button1:hover {
+            background-color: gold;
+            color: black;
+        }
+
+    .button2 {
+        background-color: red;
+        color: white;
+        border: 3px solid;
+        border-color: darkgray;
+    }
+
+        .button2:hover {
+            background-color: darkred;
+            color: white;
+        }
+
+    .red1 {
+        border-bottom: 3px solid;
+        border-color: white;
+    }
+
+    .td1 {
+        height: 20px;
+    }
+
+    .td2 {
+        color: gold;
+    }
+</style>
+
+<body>
+    <div class="div1">
+        <h1>Zaposleni Treneri</h1>
+
+        <div class="div2">
+            <button onclick="location.href='@Url.Action("Index","Vlasnik")'" class="button1">Vrati se nazad</button>
+        </div>
+
+    </div>
+
+    <table class="tabela1">
+        <tr><th class="red1" colspan="5">Treneri</th></tr>
+        <tr class="red1"><td>Korisnicko ime</td><td>Ime</td><td>Prezime</td><td>Mesto Zaposlenja</td><td>Datum Rodjenja</td><td></td></tr>
+        @foreach (var t in ViewBag.Treneri)
+        {
+            <tr><td>@t.KorIme</td><td>@t.Ime</td><td>@t.Prezime</td><td>@t.FitnesCentar.Naziv</td><td>@t.DatumRodjenja.ToString().Substring(0,9)</td><td><form method="post" action="/Vlasnik/BlokirajTrenera"><input type="hidden" name="korime" value="@t.KorIme" /> <input class="button1" type="submit" value="Blokiraj" /></form></td></tr>
+        }
+        <tr><td colspan="5"><button onclick="location.href='@Url.Action("RegistrujNovogTrenera","Vlasnik")'" class="button1">Novi trener</button></td></tr>
+    </table>
+
+
+
+</body>
+
+@{
+    if (TempData["Greska"] != null)
+    {
+        <script type="text/javascript">
+            alert("@TempData["Greska"]")
+        </script>
+        TempData["Greska"] = null;
+    }
+}
+
+

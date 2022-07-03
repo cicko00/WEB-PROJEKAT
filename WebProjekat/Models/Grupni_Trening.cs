@@ -37,6 +37,8 @@ namespace WebProjekat.Models
         {
             PrijavljeniPosetioci = new List<Korisnik>();
             Izbrisan = "NE";
+            nazivFitnesCentra="";
+            naziviPrijavljenihPosetioca = "";
         }
 
 

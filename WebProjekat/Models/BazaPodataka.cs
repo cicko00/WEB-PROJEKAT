@@ -65,7 +65,7 @@ namespace WebProjekat.Models
 
                     foreach(Fitnes_Centar fc in sviFitnesCentri())
                     {
-                        if (fc.Naziv == k.fitnesCentarNaziv)
+                        if (fc.Naziv.Trim() == k.fitnesCentarNaziv.Trim())
                             k.FitnesCentar = fc;
                         break;
 
@@ -81,7 +81,7 @@ namespace WebProjekat.Models
 
                         foreach (Fitnes_Centar fs in sviFitnesCentri())
                         {
-                            if (fs.Naziv == s )
+                            if (fs.Naziv.Trim() == s.Trim() )
                             {
                                 k.FitnesCentri.Add(fs);
 
@@ -179,12 +179,13 @@ namespace WebProjekat.Models
                 else if (k.Uloga == ULOGA.TRENER)
                 {
                     var temp = k.naziviGrupnihTreningaTrener.Split('/');
+                    k.grupniTreninziTrener = new List<Grupni_Trening>();
                     foreach (string s in temp)
                     {
-                        k.grupniTreninziTrener = new List<Grupni_Trening>();
+                        
                         foreach (Grupni_Trening gt in GRUPNITRENINZI)
                         {
-                            if (gt.Naziv == s && gt.nazivFitnesCentra == k.fitnesCentarNaziv)
+                            if (gt.Naziv.Trim() == s.Trim() && gt.nazivFitnesCentra.Trim() == k.fitnesCentarNaziv.Trim())
                             {
                                 k.grupniTreninziTrener.Add(gt);
 
@@ -194,9 +195,12 @@ namespace WebProjekat.Models
 
                     foreach (Fitnes_Centar fc in FITNESCENTRI)
                     {
-                        if (fc.Naziv == k.fitnesCentarNaziv)
+                        if (fc.Naziv.Trim() == k.fitnesCentarNaziv.Trim())
+                        {
                             k.FitnesCentar = fc;
-                        break;
+                            break;
+                        }
+                            
 
                     }
                 }
@@ -205,9 +209,10 @@ namespace WebProjekat.Models
                 else if (k.Uloga == ULOGA.VLASNIK)
                 {
                     var temp = k.NazivifitnesCentaraVlasnik.Split('/');
+                    k.FitnesCentri = new List<Fitnes_Centar>();
                     foreach (string s in temp)
                     {
-                        k.FitnesCentri = new List<Fitnes_Centar>();
+                        
                         foreach (Fitnes_Centar fs in FITNESCENTRI)
                         {
                             if (fs.Naziv == s)
@@ -236,6 +241,7 @@ namespace WebProjekat.Models
             {
                 Korisnik k = new Korisnik();
                 k.KorIme = element.Element("KorIme").Value;
+                k.Blokiran = element.Element("Blokiran").Value;
                 k.Lozinka = element.Element("Lozinka").Value;
                 k.Ime = element.Element("Ime").Value;
                 k.Prezime = element.Element("Prezime").Value;
@@ -341,14 +347,14 @@ namespace WebProjekat.Models
                 if(element.Element("KorIme").Value.Trim()==k.KorIme || element.Element("Lozinka").Value.Trim()==k.Lozinka)
                 {
                     element.Remove();
-                    root.Add(new XElement("Korisnik", new XElement("KorIme", k.KorIme), new XElement("Lozinka", k.Lozinka), new XElement("Ime", k.Ime), new XElement("Prezime", k.Prezime), new XElement("Pol", k.Pol.ToString()), new XElement("Email", k.Email), new XElement("DatumRodjenja", k.DatumRodjenja), new XElement("Uloga", k.Uloga.ToString()), new XElement("naziviGrupnihTreningaPosetilac", k.naziviGrupnihTreningaPosetilac), new XElement("naziviGrupnihTreningaTrener", k.naziviGrupnihTreningaTrener), new XElement("fitnesCentarNaziv", k.fitnesCentarNaziv), new XElement("NazivifitnesCentaraVlasnik", k.NazivifitnesCentaraVlasnik)));
+                    root.Add(new XElement("Korisnik", new XElement("KorIme", k.KorIme), new XElement("Lozinka", k.Lozinka), new XElement("Ime", k.Ime), new XElement("Prezime", k.Prezime), new XElement("Pol", k.Pol.ToString()), new XElement("Email", k.Email), new XElement("DatumRodjenja", k.DatumRodjenja), new XElement("Uloga", k.Uloga.ToString()), new XElement("naziviGrupnihTreningaPosetilac", k.naziviGrupnihTreningaPosetilac), new XElement("naziviGrupnihTreningaTrener", k.naziviGrupnihTreningaTrener), new XElement("fitnesCentarNaziv", k.fitnesCentarNaziv), new XElement("NazivifitnesCentaraVlasnik", k.NazivifitnesCentaraVlasnik),new XElement("Blokiran",k.Blokiran)));
                     xml.Save("C:\\Users\\Cvijetin Glisic\\Desktop\\WEB_Projekat\\WebProjekat\\WebProjekat\\Models\\Vlasnici.xml");
                     return;
                 }
 
                        
             } 
-            root.Add(new XElement("Korisnik", new XElement("KorIme", k.KorIme), new XElement("Lozinka", k.Lozinka), new XElement("Ime", k.Ime), new XElement("Prezime", k.Prezime), new XElement("Pol", k.Pol.ToString()), new XElement("Email", k.Email), new XElement("DatumRodjenja", k.DatumRodjenja), new XElement("Uloga", k.Uloga.ToString()), new XElement("naziviGrupnihTreningaPosetilac", k.naziviGrupnihTreningaPosetilac), new XElement("naziviGrupnihTreningaTrener", k.naziviGrupnihTreningaTrener), new XElement("fitnesCentarNaziv", k.fitnesCentarNaziv), new XElement("NazivifitnesCentaraVlasnik", k.NazivifitnesCentaraVlasnik)));
+            root.Add(new XElement("Korisnik", new XElement("KorIme", k.KorIme), new XElement("Lozinka", k.Lozinka), new XElement("Ime", k.Ime), new XElement("Prezime", k.Prezime), new XElement("Pol", k.Pol.ToString()), new XElement("Email", k.Email), new XElement("DatumRodjenja", k.DatumRodjenja), new XElement("Uloga", k.Uloga.ToString()), new XElement("naziviGrupnihTreningaPosetilac", k.naziviGrupnihTreningaPosetilac), new XElement("naziviGrupnihTreningaTrener", k.naziviGrupnihTreningaTrener), new XElement("fitnesCentarNaziv", k.fitnesCentarNaziv), new XElement("NazivifitnesCentaraVlasnik", k.NazivifitnesCentaraVlasnik),new XElement("Blokiran", k.Blokiran)));
             xml.Save("C:\\Users\\Cvijetin Glisic\\Desktop\\WEB_Projekat\\WebProjekat\\WebProjekat\\Models\\Vlasnici.xml");
 
         }
