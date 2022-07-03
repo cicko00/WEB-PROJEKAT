@@ -45,4 +45,22 @@
     <nazivFitnesCentra>BEAST FITNESS</nazivFitnesCentra>
     <naziviPrijavljenihPosetioca>jova/cicko/</naziviPrijavljenihPosetioca>
   </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>Basic Training</Naziv>
+    <TipTreninga>BODY_PUMP</TipTreninga>
+    <TrajanjeTreninga>60</TrajanjeTreninga>
+    <DatumiVreme>2022-08-03T10:30:00</DatumiVreme>
+    <MaksBrojPosetilaca>12</MaksBrojPosetilaca>
+    <nazivFitnesCentra>CICKO  GYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>BODY PUMP 1222222</Naziv>
+    <TipTreninga>YOGA</TipTreninga>
+    <TrajanjeTreninga>70</TrajanjeTreninga>
+    <DatumiVreme>2022-07-08T13:20:00</DatumiVreme>
+    <MaksBrojPosetilaca>17</MaksBrojPosetilaca>
+    <nazivFitnesCentra>CICKO  GYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>cicko/</naziviPrijavljenihPosetioca>
+  </GrupniTrening>
 </GrupniTreninzi>

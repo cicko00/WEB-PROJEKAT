@@ -61,21 +61,6 @@
     <NazivifitnesCentaraVlasnik>BEAST FITNESS/</NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
-    <KorIme>cicko</KorIme>
-    <Lozinka>cicko</Lozinka>
-    <Blokiran>NE</Blokiran>
-    <Ime>Cvijetin</Ime>
-    <Prezime>Glisic</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>cickooo@gmail.com</Email>
-    <DatumRodjenja>2000-07-03T00:00:00</DatumRodjenja>
-    <Uloga>POSETILAC</Uloga>
-    <naziviGrupnihTreningaPosetilac>BEAST CARDIO </naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
     <KorIme>coa</KorIme>
     <Lozinka>coa</Lozinka>
     <Blokiran>NE</Blokiran>
@@ -151,6 +136,21 @@
     <Blokiran>DA</Blokiran>
   </Korisnik>
   <Korisnik>
+    <KorIme>cicko</KorIme>
+    <Lozinka>cicko</Lozinka>
+    <Ime>Cvijetin</Ime>
+    <Prezime>Glisic</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>cickooo@gmail.com</Email>
+    <DatumRodjenja>2000-07-03T00:00:00</DatumRodjenja>
+    <Uloga>POSETILAC</Uloga>
+    <naziviGrupnihTreningaPosetilac>BEAST CARDIO //BODY PUMP 1222222</naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+    <Blokiran>NE</Blokiran>
+  </Korisnik>
+  <Korisnik>
     <KorIme>MARKO</KorIme>
     <Lozinka>Marko</Lozinka>
     <Ime>Marko</Ime>
@@ -160,7 +160,7 @@
     <DatumRodjenja>2001-07-13T00:00:00</DatumRodjenja>
     <Uloga>TRENER</Uloga>
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <naziviGrupnihTreningaTrener>BODY PUMP 1222222/</naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
     <Blokiran>NE</Blokiran>

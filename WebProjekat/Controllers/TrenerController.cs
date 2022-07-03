@@ -18,14 +18,14 @@ namespace WebProjekat.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            foreach(Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
             {
-                if(k.KorIme== (string)Session["PrijavljeniKorisnikIme"] && k.Lozinka== (string)Session["PrijavljeniKorisnikLozinka"])
+                if (k.KorIme == (string)Session["PrijavljeniKorisnikIme"] && k.Lozinka == (string)Session["PrijavljeniKorisnikLozinka"])
                 {
-                    if(k.Blokiran != "NE")
+                    if (k.Blokiran != "NE")
                     {
                         TempData["Greska"] = "Nalog kojem ste pokusali pristupiti je blokiran!";
-                        
+
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -57,9 +57,9 @@ namespace WebProjekat.Controllers
             return View();
         }
 
-       
 
-       
+
+
 
         public ActionResult Prikaz(string Naziv)
         {
@@ -328,11 +328,11 @@ namespace WebProjekat.Controllers
 
 
                     BazaPodataka.IzmeniKorisnike(kk);
-                    
 
-                   
 
-                    
+
+
+
                     break;
                 }
             }
@@ -373,6 +373,215 @@ namespace WebProjekat.Controllers
             return View();
         }
 
+        public ActionResult PregledTreninga()
+        {
+            List<Grupni_Trening> treninziprikaz = new List<Grupni_Trening>();
+
+            Korisnik prijavljen = null;
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if (k.KorIme == (string)Session["PrijavljeniKorisnikIme"] && k.Lozinka == (string)Session["PrijavljeniKorisnikLozinka"])
+                {
+                    prijavljen = k;
+                    break;
+
+                }
+
+            }
+
+            foreach (Grupni_Trening gt in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
+            {
+                if (prijavljen.grupniTreninziTrener.Contains(gt))
+                {
+                    treninziprikaz.Add(gt);
+                }
+            }
+            ViewBag.treninziprikaz = treninziprikaz;
+            return View();
+
+        }
+
+        public ActionResult DodajNoviTrening()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UbaciTrening(string naziv, string tiptreninga, string trajanjetreninga, string datumivreme, string maksbrojposetilaca)
+        {
+
+            Korisnik prijavljen = null;
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if (k.KorIme == (string)Session["PrijavljeniKorisnikIme"] && k.Lozinka == (string)Session["PrijavljeniKorisnikLozinka"])
+                {
+                    prijavljen = k;
+                    break;
+
+                }
+
+            }
+
+            if (naziv.Trim() == "" || tiptreninga.Trim() == "" || trajanjetreninga.Trim() == "" || datumivreme.Trim() == "" || maksbrojposetilaca.Trim() == "")
+            {
+                TempData["Greska"] = "Niste uneli sva polja";
+                return RedirectToAction("DodajNoviTrening", "Trener");
+            }
+
+            if (Int32.TryParse(trajanjetreninga, out int TRAJANJETRENINGA) == false || Int32.TryParse(maksbrojposetilaca, out int MAKSBROJPOSETILACA) == false || DateTime.TryParse(datumivreme, out DateTime dt) == false)
+            {
+                TempData["Greska"] = "Niste dobro popunili sva polja";
+                return RedirectToAction("DodajNoviTrening", "Trener");
+            }
+
+            if (DateTime.Compare(dt, DateTime.Now.AddDays(3)) < 0)
+            {
+                TempData["Greska"] = "Trening se mora zakazati bar 3 dana u napred";
+                return RedirectToAction("DodajNoviTrening", "Trener");
+            }
+
+
+            foreach (Grupni_Trening k in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
+            {
+                if (k.Naziv == naziv && k.FitnesCentar.Naziv == prijavljen.FitnesCentar.Naziv)
+                {
+
+                    TempData["Greska"] = "Trening sa tim nazivom vec postoji u fitnes centru";
+
+                    return RedirectToAction("DodajNoviTrening", "Trener");
+                }
+
+            }
+
+            Grupni_Trening gt = new Grupni_Trening();
+            gt.Naziv = naziv;
+            gt.nazivFitnesCentra = prijavljen.FitnesCentar.Naziv;
+            gt.FitnesCentar = prijavljen.FitnesCentar;
+            gt.DatumiVreme = dt;
+            gt.MaksBrojPosetilaca = MAKSBROJPOSETILACA;
+            gt.TipTreninga = (TIP_TRENINGA)Enum.Parse(typeof(TIP_TRENINGA), tiptreninga);
+            gt.TrajanjeTreninga = TRAJANJETRENINGA;
+
+            ((List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"]).Add(gt);
+            BazaPodataka.IzmeniTreninge(gt, null);
+            prijavljen.grupniTreninziTrener.Add(gt);
+
+            prijavljen.naziviGrupnihTreningaTrener = prijavljen.naziviGrupnihTreningaTrener + gt.Naziv + "/";
+            return RedirectToAction("PregledTreninga", "Trener");
+
+        }
+
+        
+        public ActionResult IzmeniTrening(string naziv,string fitnescentar)
+        {
+            foreach(Grupni_Trening gt in (List<Grupni_Trening>) HttpContext.Application["GrupniTreninzi"])
+            {
+                if(gt.Naziv==naziv && gt.FitnesCentar.Naziv == fitnescentar)
+                {
+                    ViewBag.trening = gt;
+                    Session["TreningZaIzmenu"]=gt;
+                    break;
+                }
+            }
+
+            return View();
+
+        }
+
+        [HttpPost]
+      public ActionResult IzmenaTreningaPost(string naziv, string tiptreninga, string trajanjetreninga, string datumivreme, string maksbrojposetilaca)
+        {
+
+
+            Korisnik prijavljen = null;
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if (k.KorIme == (string)Session["PrijavljeniKorisnikIme"] && k.Lozinka == (string)Session["PrijavljeniKorisnikLozinka"])
+                {
+                    prijavljen = k;
+                    break;
+
+                }
+
+            }
+
+            if (naziv.Trim() == "" || tiptreninga.Trim() == "" || trajanjetreninga.Trim() == "" || datumivreme.Trim() == "" || maksbrojposetilaca.Trim() == "")
+            {
+                TempData["Greska"] = "Niste uneli sva polja";
+                return RedirectToAction("IzmeniTrening", "Trener");
+            }
+
+            if (Int32.TryParse(trajanjetreninga, out int TRAJANJETRENINGA) == false || Int32.TryParse(maksbrojposetilaca, out int MAKSBROJPOSETILACA) == false || DateTime.TryParse(datumivreme, out DateTime dt) == false)
+            {
+                TempData["Greska"] = "Niste dobro popunili sva polja";
+                return RedirectToAction("IzmeniTrening", "Trener");
+            }
+
+            if (DateTime.Compare(dt, DateTime.Now.AddDays(3)) < 0)
+            {
+                TempData["Greska"] = "Trening se mora zakazati bar 3 dana u napred";
+                return RedirectToAction("IzmeniTrening", "Trener");
+            }
+
+            
+
+
+            foreach (Grupni_Trening k in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
+            {
+                if (k.Naziv == naziv && k.FitnesCentar.Naziv == prijavljen.FitnesCentar.Naziv && ((Grupni_Trening)Session["TreningZaIzmenu"]).Naziv !=naziv)
+                {
+
+                    TempData["Greska"] = "Trening sa tim nazivom vec postoji u fitnes centru";
+
+                    return RedirectToAction("IzmeniTrening", "Trener");
+                }
+
+            }
+
+            Grupni_Trening gt = (Grupni_Trening)Session["TreningZaIzmenu"];
+
+            foreach(Grupni_Trening gtr in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
+            {
+                if (gtr.Naziv == gt.Naziv)
+                {
+                    Grupni_Trening stari = new Grupni_Trening();
+                    stari.Naziv = gtr.Naziv;
+                    stari.nazivFitnesCentra = gtr.nazivFitnesCentra;
+                    gtr.Naziv = naziv;
+                    gtr.nazivFitnesCentra = prijavljen.FitnesCentar.Naziv;
+                    gtr.FitnesCentar = prijavljen.FitnesCentar;
+                    gtr.DatumiVreme = dt;
+                    gtr.MaksBrojPosetilaca = MAKSBROJPOSETILACA;
+                    gtr.TipTreninga = (TIP_TRENINGA)Enum.Parse(typeof(TIP_TRENINGA), tiptreninga);
+                    gtr.TrajanjeTreninga = TRAJANJETRENINGA;
+
+                    
+                    BazaPodataka.IzmeniTreninge(gtr, stari);
+
+                    foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+                    {
+                        if (k.naziviGrupnihTreningaPosetilac.Trim().Contains(stari.Naziv))
+                        {
+                            k.naziviGrupnihTreningaPosetilac = k.naziviGrupnihTreningaPosetilac.Replace(stari.Naziv, gt.Naziv);
+                            BazaPodataka.IzmeniKorisnike(k);
+                        }
+
+                        if (k.naziviGrupnihTreningaTrener.Trim().Contains(stari.Naziv))
+                        {
+                            k.naziviGrupnihTreningaTrener = k.naziviGrupnihTreningaTrener.Replace(stari.Naziv, gt.Naziv);
+                            BazaPodataka.IzmeniKorisnike(k);
+                        }
+                    }
+                    break;
+                }
+            }
+            
+            return RedirectToAction("PregledTreninga", "Trener");
+
+
+
+
+        }
     }
 }
      

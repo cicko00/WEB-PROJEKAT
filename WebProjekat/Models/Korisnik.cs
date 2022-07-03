@@ -15,7 +15,7 @@ namespace WebProjekat.Models
       public POL Pol { get; set; }
       public string Email { get; set; }
      public  DateTime DatumRodjenja { get; set; }
-     public  ULOGA Uloga { get; set; }
+     public  ULOGA Uloga { get; set; } 
       public List <Grupni_Trening> grupniTreninziPosetilac { get; set; }
       public List<Grupni_Trening> grupniTreninziTrener { get; set; }
         public Fitnes_Centar FitnesCentar { get; set; }

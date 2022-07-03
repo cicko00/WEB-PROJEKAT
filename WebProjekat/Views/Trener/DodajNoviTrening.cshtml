@@ -1,0 +1,111 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "DodajNoviTrening";
+}
+
+<html>
+
+<head>
+    <style>
+        html {
+            background-color: lightblue;
+        }
+
+        .div1 {
+            font-family: cursive;
+            font-style: italic;
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .tabela1 {
+            border: 5px solid;
+            background-color: black;
+            border-color: white;
+            color: white;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blank_row {
+            height: 10px
+        }
+
+        .div2 {
+            text-align: right;
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+        }
+
+            .button1:hover {
+                background-color: gold;
+                color: black;
+            }
+
+        .input1 {
+            background-color: silver;
+        }
+
+            .input1:hover {
+                background-color: white;
+            }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="div1">
+        <h1>Novi Trening</h1>
+
+        <div class="div2">
+            <button onclick="location.href='@Url.Action("PregledTreninga","Trener")'" class="button1">Vrati se nazad</button>
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <form action="/Trener/UbaciTrening" method="post">
+        <table class="tabela1">
+            <tr><th colspan="2"><h3>Trening</h3></th></tr>
+
+            <tr><td>Naziv:</td><td><input name="naziv" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td></td></tr>
+            <tr><td>TipTreninga:</td><td><select name="tiptreninga" class="input1" type="text"><option>YOGA</option><option>CARDIO</option><option>BODY_PUMP</option><option>LESS_MILLS_TONE</option></select></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Trajanje treninga:</td><td><input name="trajanjetreninga" class="input1" type="text" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Datum i vreme:</td><td><input name="datumivreme" class="input1" type="datetime" /></td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td>Maks broj posetilaca:</td><td><input name="maksbrojposetilaca" class="input1" type="text" /></td></tr>
+
+            <tr class="blank_row"><td> </td></tr>
+            <tr class="blank_row"><td> </td></tr>
+            <tr><td colspan="2"><input type="submit" class="input1" value="Dodaj" /></td></tr>
+        </table>
+    </form>
+
+</body>
+</html>
+@{
+    if (TempData["Greska"] != null)
+    {
+        <script type="text/javascript">
+            alert("@TempData["Greska"]")
+        </script>
+        TempData["Greska"] = null;
+    }
+}
+
+
+

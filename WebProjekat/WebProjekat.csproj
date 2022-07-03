@@ -198,6 +198,9 @@
     <Content Include="Views\Trener\Prikaz.cshtml" />
     <Content Include="Views\Trener\PrikaziProfil.cshtml" />
     <Content Include="Views\Trener\IzmeniProfil.cshtml" />
+    <Content Include="Views\Trener\PregledTreninga.cshtml" />
+    <Content Include="Views\Trener\DodajNoviTrening.cshtml" />
+    <Content Include="Views\Trener\IzmeniTrening.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
