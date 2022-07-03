@@ -391,7 +391,7 @@ namespace WebProjekat.Controllers
 
             foreach (Grupni_Trening gt in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
             {
-                if (prijavljen.grupniTreninziTrener.Contains(gt))
+                if (prijavljen.grupniTreninziTrener.Contains(gt) && gt.Izbrisan=="NE" && DateTime.Compare(gt.DatumiVreme,DateTime.Now)>0)
                 {
                     treninziprikaz.Add(gt);
                 }
@@ -467,6 +467,8 @@ namespace WebProjekat.Controllers
             prijavljen.grupniTreninziTrener.Add(gt);
 
             prijavljen.naziviGrupnihTreningaTrener = prijavljen.naziviGrupnihTreningaTrener + gt.Naziv + "/";
+
+            BazaPodataka.IzmeniKorisnike(prijavljen);
             return RedirectToAction("PregledTreninga", "Trener");
 
         }
@@ -578,9 +580,204 @@ namespace WebProjekat.Controllers
             
             return RedirectToAction("PregledTreninga", "Trener");
 
+        }
+
+        public ActionResult Istorija()
+        {
+            Korisnik prijavljen = null;
+            
+
+            foreach (Korisnik k in (List<Korisnik>)HttpContext.Application["Korisnici"])
+            {
+                if (k.KorIme == (string)Session["PrijavljeniKorisnikIme"] && k.Lozinka == (string)Session["PrijavljeniKorisnikLozinka"])
+                {
+                    prijavljen = k;
+                    break;
+
+                }
+            }
+
+            if (Session["IstorijaTreningaSortirana"] != null)
+            {
+                ViewBag.Treninzi = (List<Grupni_Trening>)Session["IstorijaTreningaSortirana"];
+                Session["IstorijaTreningaSortirana"] = null;
+            }
+            else
+            {
+                Session["TreninziZaIstoriju"] = new List<Grupni_Trening>();
+                foreach (Grupni_Trening gt in prijavljen.grupniTreninziTrener)
+                {
+                    if (DateTime.Compare(gt.DatumiVreme, DateTime.Now) < 0 && gt.Izbrisan == "NE")
+                    {
+                        ((List<Grupni_Trening>)Session["TreninziZaIstoriju"]).Add(gt);
+
+                    }
+                }
+                ViewBag.Treninzi = (List<Grupni_Trening>)Session["TreninziZaIstoriju"];
+            }
+            
+            
+
+           
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SortirajIstoriju(string vremeod,string vremedo,string naziv,string tippretraga,string sortiranjePo,string sortiranjeRedosled)
+        {
+
+            Session["IstorijaTreningaSortirana"] = new List<Grupni_Trening>();
+            List<Grupni_Trening> treninzizasortiranje = new List<Grupni_Trening>();
+            foreach(Grupni_Trening gt in (List<Grupni_Trening>)Session["TreninziZaIstoriju"])
+            {
+                treninzizasortiranje.Add(gt);
+            }
 
 
+           
 
+            
+            
+
+
+            
+            if (vremeod.Trim() != String.Empty && DateTime.TryParse(vremeod.Trim(), out DateTime a) == true)
+            {
+
+                List<Grupni_Trening> zaBrisanje = new List<Grupni_Trening>();
+                foreach (Grupni_Trening gt in treninzizasortiranje)
+                {
+                    if (DateTime.Compare(gt.DatumiVreme,a)<0)
+                        zaBrisanje.Add(gt);
+                }
+                foreach (Grupni_Trening fc in zaBrisanje)
+                {
+                    treninzizasortiranje.Remove(fc);
+                }
+            }
+
+            if (vremedo.Trim() != String.Empty && DateTime.TryParse(vremedo.Trim(), out DateTime aa) == true)
+            {
+
+                List<Grupni_Trening> zaBrisanje = new List<Grupni_Trening>();
+                foreach (Grupni_Trening gt in treninzizasortiranje)
+                {
+                    if (DateTime.Compare(gt.DatumiVreme, aa) > 0)
+                        zaBrisanje.Add(gt);
+                }
+                foreach (Grupni_Trening fc in zaBrisanje)
+                {
+                    treninzizasortiranje.Remove(fc);
+                }
+            }
+
+            if (naziv.Trim() != String.Empty)
+            {
+                List<Grupni_Trening> zaBrisanje = new List<Grupni_Trening>();
+                foreach (Grupni_Trening gt in treninzizasortiranje)
+                {
+                    if (!gt.Naziv.Contains(naziv.Trim()))
+                        zaBrisanje.Add(gt);
+                }
+                foreach (Grupni_Trening fc in zaBrisanje)
+                {
+                    treninzizasortiranje.Remove(fc);
+                }
+            }
+
+            if (tippretraga.Trim() != String.Empty)
+            {
+                List<Grupni_Trening> zaBrisanje = new List<Grupni_Trening>();
+                foreach (Grupni_Trening fc in treninzizasortiranje)
+                {
+                    if (fc.TipTreninga != (TIP_TRENINGA)Enum.Parse(typeof(TIP_TRENINGA),tippretraga))
+                        zaBrisanje.Add(fc);
+                }
+                foreach (Grupni_Trening fc in zaBrisanje)
+                {
+                    treninzizasortiranje.Remove(fc);
+                }
+            }
+
+            if (sortiranjePo != String.Empty)
+            {
+                if (sortiranjePo.Trim() == "NAZIV")
+                {
+                    if (sortiranjeRedosled.Trim() == "OPADAJUCE")
+                    {
+                        treninzizasortiranje = treninzizasortiranje.OrderByDescending(o => o.Naziv).ToList();
+                    }
+                    else if (sortiranjeRedosled.Trim() == "RASTUCE")
+                    {
+                        treninzizasortiranje = treninzizasortiranje.OrderBy(o => o.Naziv).ToList();
+                    }
+                }
+                else if (sortiranjePo.Trim() == "DATUM I VREME")
+                {
+                    if (sortiranjeRedosled.Trim() == "OPADAJUCE")
+                    {
+                        treninzizasortiranje = treninzizasortiranje.OrderByDescending(o => o.DatumiVreme).ToList();
+                    }
+                    else if (sortiranjeRedosled.Trim() == "RASTUCE")
+                    {
+                        treninzizasortiranje = treninzizasortiranje.OrderBy(o => o.DatumiVreme).ToList();
+                    }
+                }
+
+                else if (sortiranjePo.Trim() == "TIP TRENINGA")
+                {
+                    if (sortiranjeRedosled.Trim() == "OPADAJUCE")
+                    {
+                        treninzizasortiranje = treninzizasortiranje.OrderByDescending(o => o.TipTreninga).ToList();
+                    }
+                    else if (sortiranjeRedosled.Trim() == "RASTUCE")
+                    {
+                        treninzizasortiranje = treninzizasortiranje.OrderBy(o => o.TipTreninga).ToList();
+                    }
+                }
+            }
+            Session["IstorijaTreningaSortirana"] = treninzizasortiranje;
+            return RedirectToAction("Istorija", "Trener");
+
+            
+
+        }
+       public ActionResult PrikazPosetilaca(string naziv,string nazivfc)
+        {
+            Session["Posetiocizaprikaz"] = new List<Korisnik>();
+
+            foreach(Grupni_Trening trening in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
+            {
+                if(trening.Naziv==naziv && trening.FitnesCentar.Naziv == nazivfc)
+                {
+                    Session["Posetiocizaprikaz"] = trening.PrijavljeniPosetioci;
+                }
+            }
+            ViewBag.Posetioci = (List<Korisnik>)Session["Posetiocizaprikaz"];
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult ObrisiTrening(string naziv,string fitnescentar)
+        {
+            foreach (Grupni_Trening trening in (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"])
+            {
+                if (trening.Naziv == naziv && trening.FitnesCentar.Naziv == fitnescentar)
+                {
+                    if(trening.PrijavljeniPosetioci.Count != 0)
+                    {
+                        TempData["Greska"] = "Nije moguce brisanje, jer postoje prijavljeni korisnici za ovaj dogadjaj";
+
+                        return RedirectToAction("PregledTreninga", "Trener");
+                    }
+
+                    trening.Izbrisan = "DA";
+                    break;
+                }
+            }
+
+            return RedirectToAction("PregledTreninga","Trener");
         }
     }
 }

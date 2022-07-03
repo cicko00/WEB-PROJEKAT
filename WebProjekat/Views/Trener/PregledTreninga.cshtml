@@ -114,11 +114,11 @@
     </div>
 
     <table class="tabela1">
-        <tr><th class="red1" colspan="5">TRENINZI</th></tr>
-        <tr class="red1"><td>Naziv</td><td>Datum i Vreme</td><td>Trajanje Treninga</td><td>Tip Treninga</td><td>Broj prijavljenih posetilaca</td><td></td><td></td></tr>
+        <tr><th class="red1" colspan="8">TRENINZI</th></tr>
+        <tr class="red1"><td>Naziv</td><td>Datum i Vreme</td><td>Trajanje Treninga</td><td>Tip Treninga</td><td>Broj prijavljenih posetilaca</td><td><td><td></td><td></td></tr>
         @foreach (var t in ViewBag.treninziprikaz)
         {
-            <tr><td>@t.Naziv</td><td>@t.DatumiVreme</td><td>@t.TrajanjeTreninga</td><td>@t.TipTreninga.ToString()</td><td>@t.PrijavljeniPosetioci.Count</td><td><form method="get" action="/Trener/IzmeniTrening"><input type="hidden" name="naziv" value="@t.Naziv" /><input type="hidden" name="fitnescentar" value="@t.FitnesCentar.Naziv" /> <input class="button1" type="submit" value="Izmeni" /></form></td><td><form method="post" action="/Trener/ObrisiTrening"><input type="hidden" name="naziv" value="@t.Naziv" /><input type="hidden" name="fitnescentar" value="@t.FitnesCentar.Naziv" /> <input class="button2" type="submit" value="Obrisi" /></form></td></tr>
+        <tr><td>@t.Naziv</td><td>@t.DatumiVreme</td><td>@t.TrajanjeTreninga</td><td>@t.TipTreninga.ToString()</td><td>@t.PrijavljeniPosetioci.Count</td><td><form method="get" action="/Trener/IzmeniTrening"><input type="hidden" name="naziv" value="@t.Naziv" /><input type="hidden" name="fitnescentar" value="@t.FitnesCentar.Naziv" /> <input class="button1" type="submit" value="Izmeni" /></form></td><td><form method="post" action="/Trener/ObrisiTrening"><input type="hidden" name="naziv" value="@t.Naziv" /><input type="hidden" name="fitnescentar" value="@t.FitnesCentar.Naziv" /> <input class="button2" type="submit" value="Obrisi" /></form></td><td><form method="get" action="/Trener/PrikazPosetilaca"><input type="hidden" name="naziv" value="@t.Naziv" /><input type="hidden" name="nazivfc" value="@t.FitnesCentar.Naziv" /> <input class="registracija" type="submit" value="Posetioci" /></form></td></tr>
         }
         <tr><td colspan="5"><button onclick="location.href='@Url.Action("DodajNoviTrening","Trener")'" class="button1">Dodaj</button></td></tr>
     </table>

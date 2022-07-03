@@ -13,9 +13,9 @@ namespace WebProjekat.Models
             
         }
 
-        public Komentar(Korisnik posetilac, Fitnes_Centar fitnesCentar, string tekst, int ocena)
+        public Komentar(Korisnik posetilac, Fitnes_Centar fitnesCentar, string tekst, int ocena)  
         {
-            Posetilac = posetilac; 
+            Posetilac = posetilac;  
             FitnesCentar = fitnesCentar;
             Tekst = tekst; 
             Ocena = ocena;  

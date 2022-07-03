@@ -97,7 +97,7 @@ namespace WebProjekat.Controllers
             List<Grupni_Trening> GrupniTreninzi = (List<Grupni_Trening>)HttpContext.Application["GrupniTreninzi"];
             List<Fitnes_Centar> FitnesCentri = (List<Fitnes_Centar>)HttpContext.Application["FitnesCentri"];
             List<Komentar> Komentari =  (List<Komentar>)HttpContext.Application["Komentari"];
-            
+             
             
 
             ViewData["GrupniTreninzi"] = GrupniTreninzi;
@@ -236,9 +236,9 @@ namespace WebProjekat.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
-        public ActionResult DodajNovogKorisnika(string korime,string lozinka,string ponlozinka,string ime,string prezime,string pol,string email,string datumrodjenja,string uloga)
+        public ActionResult DodajNovogKorisnika(string korime,string lozinka,string ponlozinka,string ime,string prezime,string pol,string email,string datumrodjenja)
         {
-            if(korime.Trim()=="" || lozinka.Trim() == "" || ponlozinka.Trim() == ""|| ime.Trim() == "" || prezime.Trim() == "" || pol.Trim() == "" || email.Trim() == "" || datumrodjenja.Trim() == "" || uloga.Trim() == "")
+            if(korime.Trim()=="" || lozinka.Trim() == "" || ponlozinka.Trim() == ""|| ime.Trim() == "" || prezime.Trim() == "" || pol.Trim() == "" || email.Trim() == "" || datumrodjenja.Trim() == "")
             {
                 TempData["Greska"] = "Niste uneli sva polja";
                 return RedirectToAction("Registracija", "Home");
@@ -268,7 +268,7 @@ namespace WebProjekat.Controllers
                 }
             }
 
-            Korisnik kor = new Korisnik(korime, lozinka, ime, prezime, (POL)Enum.Parse(typeof(POL), pol), email, DateTime.Parse(datumrodjenja), (ULOGA)Enum.Parse(typeof(ULOGA), uloga));
+            Korisnik kor = new Korisnik(korime, lozinka, ime, prezime, (POL)Enum.Parse(typeof(POL), pol), email, DateTime.Parse(datumrodjenja), ULOGA.POSETILAC);
             ((List<Korisnik>)HttpContext.Application["Korisnici"]).Add(kor);
             BazaPodataka.IzmeniKorisnike(kor);
             return RedirectToAction("Index", "Home");

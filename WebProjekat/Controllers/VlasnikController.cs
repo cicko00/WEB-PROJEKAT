@@ -806,5 +806,7 @@ namespace WebProjekat.Controllers
             return RedirectToAction("ZaposleniTreneri","Vlasnik");
         }
 
+       
+
     }
 }

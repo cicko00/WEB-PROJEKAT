@@ -1,0 +1,112 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "PrikazPosetilaca";
+}
+
+
+
+<html>
+<head>
+    <style>
+        html {
+            background-color: lightblue
+        }
+
+        .h11 {
+            font-family: cursive;
+            font-style: italic;
+            color: white;
+            text-align: center
+        }
+
+        .tabela1 {
+            border: 5px solid;
+            background-color: black;
+            border-color: white;
+            color: white;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .div1 {
+            background-color: black;
+        }
+
+        .div2 {
+            text-align: right;
+        }
+
+        .registracija {
+            background-color: black;
+            color: white;
+            margin-right: auto;
+        }
+
+            .registracija:hover {
+                background-color: gold;
+                color: black;
+            }
+
+        .polje1 {
+            border-bottom: 3px solid;
+            border-color: white;
+        }
+
+        .polje2 {
+            height: 10px;
+        }
+
+        .polje3 {
+            border-top: 3px solid;
+        }
+
+        .button1 {
+            background-color: black;
+            color: white;
+        }
+
+            .button1:hover {
+                background-color: gold;
+                color: black;
+            }
+
+        .input1 {
+            background-color: silver;
+        }
+
+            .input1:hover {
+                background-color: white;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+
+        <h1 class="h11">
+
+            Posetioci na treningu
+
+        </h1>
+        <div class="div2">
+            <input class="registracija" type="button" value="Vrati se nazad" onclick="location.href='@Url.Action("Index","Trener")'" />
+            
+        </div>
+
+    </div>
+
+
+    <br />
+    <br />
+    <table class="tabela1">
+        <tr><th colspan="3"><h2>Fitnes Centri</h2></th></tr>
+        <tr><td class="polje1">Korisnik</td><td class="polje1">Ime</td><td class="polje1">Prezime</td></tr>
+        @foreach (var k in ViewBag.Posetioci)
+        {
+            <tr><td>@k.KorIme</td><td>@k.Ime</td><td>@k.Prezime</td></tr>
+        }
+    </table>
+    </body>
+</html>

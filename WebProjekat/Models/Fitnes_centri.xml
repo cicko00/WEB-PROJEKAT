@@ -1,62 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FitnesCentri>
   <FitnesCentar>
-    <Naziv>FULL GYM FITNESS</Naziv>
-    <Adresa>Danila Kisa 76</Adresa>
-    <GodinaOtvaranja>2016</GodinaOtvaranja>
-    <CenaMesecneClanarine>2300</CenaMesecneClanarine>
-    <CenaGodisnjeClanarine>9500</CenaGodisnjeClanarine>
-    <CenaGrupnogTreninga>700</CenaGrupnogTreninga>
-    <CenaJednogTreninga>430</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
-    <nazivVlasnika>Perapera</nazivVlasnika>
-    <Izbrisan>NE</Izbrisan>
-  </FitnesCentar>
-  <FitnesCentar>
-    <Naziv>BEAST FITNESS</Naziv>
-    <Adresa>Dostojevskog 76</Adresa>
-    <GodinaOtvaranja>2015</GodinaOtvaranja>
-    <CenaMesecneClanarine>2500</CenaMesecneClanarine>
-    <CenaGodisnjeClanarine>9300</CenaGodisnjeClanarine>
-    <CenaGrupnogTreninga>730</CenaGrupnogTreninga>
-    <CenaJednogTreninga>450</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>1000</CenaTreningaSaTrenerom>
-    <nazivVlasnika>jovajova</nazivVlasnika>
-    <Izbrisan>NE</Izbrisan>
-  </FitnesCentar>
-  <FitnesCentar>
-    <Naziv>GYMGYM</Naziv>
-    <Adresa>Marka Miljanova 76</Adresa>
-    <GodinaOtvaranja>2021</GodinaOtvaranja>
-    <CenaMesecneClanarine>2000</CenaMesecneClanarine>
-    <CenaGodisnjeClanarine>8000</CenaGodisnjeClanarine>
-    <CenaGrupnogTreninga>300</CenaGrupnogTreninga>
-    <CenaJednogTreninga>200</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>500</CenaTreningaSaTrenerom>
-    <nazivVlasnika>Ana</nazivVlasnika>
-    <Izbrisan>NE</Izbrisan>
-  </FitnesCentar>
-  <FitnesCentar>
-    <Naziv>TOP GYM Novi Sad</Naziv>
-    <Adresa>Vuka Karadzica 11</Adresa>
-    <GodinaOtvaranja>2016</GodinaOtvaranja>
-    <CenaMesecneClanarine>3000</CenaMesecneClanarine>
-    <CenaGodisnjeClanarine>10000</CenaGodisnjeClanarine>
-    <CenaGrupnogTreninga>900</CenaGrupnogTreninga>
-    <CenaJednogTreninga>600</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>1200</CenaTreningaSaTrenerom>
-    <nazivVlasnika>Ana</nazivVlasnika>
-    <Izbrisan>NE</Izbrisan>
-  </FitnesCentar>
-  <FitnesCentar>
-    <Naziv>CICKO  GYM</Naziv>
-    <Adresa>Beogradski kej 39 A</Adresa>
+    <Naziv>CICKO GYM</Naziv>
+    <Adresa>Beogradski Kej 39</Adresa>
     <GodinaOtvaranja>2022</GodinaOtvaranja>
     <CenaMesecneClanarine>2000</CenaMesecneClanarine>
     <CenaGodisnjeClanarine>12000</CenaGodisnjeClanarine>
-    <CenaGrupnogTreninga>700</CenaGrupnogTreninga>
+    <CenaGrupnogTreninga>800</CenaGrupnogTreninga>
     <CenaJednogTreninga>500</CenaJednogTreninga>
-    <CenaTreningaSaTrenerom>900</CenaTreningaSaTrenerom>
+    <CenaTreningaSaTrenerom>1200</CenaTreningaSaTrenerom>
+    <nazivVlasnika>Cvijetin</nazivVlasnika>
+    <Izbrisan>NE</Izbrisan>
+  </FitnesCentar>
+  <FitnesCentar>
+    <Naziv>GYMGYM NS</Naziv>
+    <Adresa>Beogradski kej 39</Adresa>
+    <GodinaOtvaranja>2022</GodinaOtvaranja>
+    <CenaMesecneClanarine>2000</CenaMesecneClanarine>
+    <CenaGodisnjeClanarine>12000</CenaGodisnjeClanarine>
+    <CenaGrupnogTreninga>1000</CenaGrupnogTreninga>
+    <CenaJednogTreninga>700</CenaJednogTreninga>
+    <CenaTreningaSaTrenerom>1200</CenaTreningaSaTrenerom>
     <nazivVlasnika>Cvijetin</nazivVlasnika>
     <Izbrisan>NE</Izbrisan>
   </FitnesCentar>

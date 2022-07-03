@@ -55,7 +55,7 @@ namespace WebProjekat.Models
                         
                         foreach (Grupni_Trening gt in sviTreninzi())
                         {
-                            if (gt.Naziv == s && gt.nazivFitnesCentra == k.fitnesCentarNaziv)
+                            if (gt.Naziv.Trim() == s.Trim() && gt.nazivFitnesCentra == k.fitnesCentarNaziv)
                             {
                                 k.grupniTreninziTrener.Add(gt);
                                 

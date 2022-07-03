@@ -26,14 +26,14 @@ namespace WebProjekat.Models
         public string fitnesCentarNaziv { get; set; }
        public string naziviGrupnihTreningaTrener { get; set; } 
         public string naziviGrupnihTreningaPosetilac { get; set; }
-
+         
 
 
           
         public Korisnik()
         {
             grupniTreninziPosetilac = new List<Grupni_Trening>();
-            grupniTreninziTrener = new List<Grupni_Trening>();
+            grupniTreninziTrener = new List<Grupni_Trening>(); 
             FitnesCentri = new List<Fitnes_Centar>();
             Blokiran = "NE";
             NazivifitnesCentaraVlasnik = "";
@@ -50,7 +50,14 @@ namespace WebProjekat.Models
             Email = email;
             DatumRodjenja = datumrodjenja; 
             Uloga = u;
-            
+            grupniTreninziPosetilac = new List<Grupni_Trening>();
+            grupniTreninziTrener = new List<Grupni_Trening>();
+            FitnesCentri = new List<Fitnes_Centar>();
+            Blokiran = "NE";
+            NazivifitnesCentaraVlasnik = "";
+            fitnesCentarNaziv = "";
+            naziviGrupnihTreningaTrener = "";
+            naziviGrupnihTreningaPosetilac = "";
         }
     }
 }

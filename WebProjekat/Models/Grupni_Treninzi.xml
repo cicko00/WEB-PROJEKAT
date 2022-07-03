@@ -1,66 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GrupniTreninzi>
   <GrupniTrening>
-    <Naziv>CARDIO VEZBE</Naziv>
+    <Naziv>TRENING 1</Naziv>
     <TipTreninga>CARDIO</TipTreninga>
     <TrajanjeTreninga>60</TrajanjeTreninga>
-    <DatumiVreme>2022-03-03T21:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>18</MaksBrojPosetilaca>
-    <nazivFitnesCentra>FULL GYM FITNESS</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+    <DatumiVreme>2022-08-04T12:30:00</DatumiVreme>
+    <MaksBrojPosetilaca>8</MaksBrojPosetilaca>
+    <nazivFitnesCentra>GYMGYM NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
   </GrupniTrening>
   <GrupniTrening>
-    <Naziv>YOGA </Naziv>
-    <TipTreninga>YOGA</TipTreninga>
-    <TrajanjeTreninga>70</TrajanjeTreninga>
-    <DatumiVreme>2022-01-01T21:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>15</MaksBrojPosetilaca>
-    <nazivFitnesCentra>FULL GYM FITNESS</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
-  </GrupniTrening>
-  <GrupniTrening>
-    <Naziv>YOGA training 2</Naziv>
-    <TipTreninga>YOGA</TipTreninga>
-    <TrajanjeTreninga>70</TrajanjeTreninga>
-    <DatumiVreme>2022-12-12T21:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>15</MaksBrojPosetilaca>
-    <nazivFitnesCentra>GYMGYM</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
-  </GrupniTrening>
-  <GrupniTrening>
-    <Naziv>YOGA training</Naziv>
-    <TipTreninga>YOGA</TipTreninga>
-    <TrajanjeTreninga>70</TrajanjeTreninga>
-    <DatumiVreme>2022-07-08T21:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>15</MaksBrojPosetilaca>
-    <nazivFitnesCentra>GYMGYM</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
-  </GrupniTrening>
-  <GrupniTrening>
-    <Naziv>BEAST CARDIO </Naziv>
-    <TipTreninga>CARDIO</TipTreninga>
-    <TrajanjeTreninga>60</TrajanjeTreninga>
-    <DatumiVreme>2022-06-03T21:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>18</MaksBrojPosetilaca>
-    <nazivFitnesCentra>BEAST FITNESS</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca>jova/cicko/</naziviPrijavljenihPosetioca>
-  </GrupniTrening>
-  <GrupniTrening>
-    <Naziv>Basic Training</Naziv>
+    <Naziv>trening222</Naziv>
     <TipTreninga>BODY_PUMP</TipTreninga>
-    <TrajanjeTreninga>60</TrajanjeTreninga>
-    <DatumiVreme>2022-08-03T10:30:00</DatumiVreme>
-    <MaksBrojPosetilaca>12</MaksBrojPosetilaca>
-    <nazivFitnesCentra>CICKO  GYM</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
+    <TrajanjeTreninga>70</TrajanjeTreninga>
+    <DatumiVreme>2022-10-10T00:00:00</DatumiVreme>
+    <MaksBrojPosetilaca>5</MaksBrojPosetilaca>
+    <nazivFitnesCentra>GYMGYM NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
   </GrupniTrening>
   <GrupniTrening>
-    <Naziv>BODY PUMP 1222222</Naziv>
+    <Naziv>YOGA trening</Naziv>
     <TipTreninga>YOGA</TipTreninga>
     <TrajanjeTreninga>70</TrajanjeTreninga>
-    <DatumiVreme>2022-07-08T13:20:00</DatumiVreme>
-    <MaksBrojPosetilaca>17</MaksBrojPosetilaca>
-    <nazivFitnesCentra>CICKO  GYM</nazivFitnesCentra>
-    <naziviPrijavljenihPosetioca>cicko/</naziviPrijavljenihPosetioca>
+    <DatumiVreme>2022-02-02T00:00:00</DatumiVreme>
+    <MaksBrojPosetilaca>5</MaksBrojPosetilaca>
+    <nazivFitnesCentra>GYMGYM NS</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca>Cicko/</naziviPrijavljenihPosetioca>
+  </GrupniTrening>
+  <GrupniTrening>
+    <Naziv>BBBBBB</Naziv>
+    <TipTreninga>YOGA</TipTreninga>
+    <TrajanjeTreninga>22</TrajanjeTreninga>
+    <DatumiVreme>2022-08-08T12:30:00</DatumiVreme>
+    <MaksBrojPosetilaca>5</MaksBrojPosetilaca>
+    <nazivFitnesCentra>CICKO GYM</nazivFitnesCentra>
+    <naziviPrijavljenihPosetioca></naziviPrijavljenihPosetioca>
   </GrupniTrening>
 </GrupniTreninzi>

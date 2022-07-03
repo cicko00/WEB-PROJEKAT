@@ -201,6 +201,8 @@
     <Content Include="Views\Trener\PregledTreninga.cshtml" />
     <Content Include="Views\Trener\DodajNoviTrening.cshtml" />
     <Content Include="Views\Trener\IzmeniTrening.cshtml" />
+    <Content Include="Views\Trener\Istorija.cshtml" />
+    <Content Include="Views\Trener\PrikazPosetilaca.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

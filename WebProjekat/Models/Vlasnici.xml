@@ -13,36 +13,6 @@
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>FULL GYM FITNESS/</NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>jova</KorIme>
-    <Lozinka>jova</Lozinka>
-    <Blokiran>NE</Blokiran>
-    <Ime>Jovan</Ime>
-    <Prezime>Jovic</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>jole@gmail.com</Email>
-    <DatumRodjenja>2022-06-26T00:00:00</DatumRodjenja>
-    <Uloga>POSETILAC</Uloga>
-    <naziviGrupnihTreningaPosetilac>BEAST CARDIO </naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>janko</KorIme>
-    <Lozinka>janko</Lozinka>
-    <Blokiran>NE</Blokiran>
-    <Ime>Pera</Ime>
-    <Prezime>Peric</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>Pera@gmail.com</Email>
-    <DatumRodjenja>1996-01-01T00:00:00</DatumRodjenja>
-    <Uloga>TRENER</Uloga>
-    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv>GYMGYM</fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
@@ -58,22 +28,7 @@
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>BEAST FITNESS/</NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>coa</KorIme>
-    <Lozinka>coa</Lozinka>
-    <Blokiran>NE</Blokiran>
-    <Ime>Aca</Ime>
-    <Prezime>Acic</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>coa@gmail.com</Email>
-    <DatumRodjenja>2002-02-05T00:00:00</DatumRodjenja>
-    <Uloga>TRENER</Uloga>
-    <naziviGrupnihTreningaPosetilac />
-    <naziviGrupnihTreningaTrener />
-    <fitnesCentarNaziv>GYMGYM</fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik />
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
     <KorIme>Ana</KorIme>
@@ -88,27 +43,11 @@
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>GYMGYM/TOP GYM Novi Sad/</NazivifitnesCentaraVlasnik>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>nikola</KorIme>
-    <Lozinka>nikola</Lozinka>
-    <Blokiran>NE</Blokiran>
-    <Ime>Nikola</Ime>
-    <Prezime>Nikic</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>nikola@gmail.com</Email>
-    <DatumRodjenja>1998-06-15T00:00:00</DatumRodjenja>
-    <Uloga>TRENER</Uloga>
-    <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv>TOP GYM Novi Sad</fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
   </Korisnik>
   <Korisnik>
     <KorIme>Cvijetin</KorIme>
     <Lozinka>Cvijetin</Lozinka>
-    <Blokiran>NE</Blokiran>
     <Ime>Cvijetin</Ime>
     <Prezime>Glisic</Prezime>
     <Pol>MUSKI</Pol>
@@ -118,50 +57,51 @@
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
     <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
     <fitnesCentarNaziv></fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik>CICKO  GYM/</NazivifitnesCentaraVlasnik>
+    <NazivifitnesCentaraVlasnik>CICKO GYM/GYMGYM NS/</NazivifitnesCentaraVlasnik>
+    <Blokiran>NE</Blokiran>
   </Korisnik>
   <Korisnik>
-    <KorIme>Milos</KorIme>
-    <Lozinka>Milos</Lozinka>
-    <Ime>Milos</Ime>
-    <Prezime>Misic</Prezime>
+    <KorIme>JOVAN</KorIme>
+    <Lozinka>JOVAN</Lozinka>
+    <Ime>Jovan</Ime>
+    <Prezime>Jovan</Prezime>
     <Pol>MUSKI</Pol>
-    <Email>miki@gmail.com</Email>
-    <DatumRodjenja>1992-07-19T00:00:00</DatumRodjenja>
+    <Email>j@gmail.com</Email>
+    <DatumRodjenja>2022-07-13T00:00:00</DatumRodjenja>
     <Uloga>TRENER</Uloga>
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
-    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
-    <Blokiran>DA</Blokiran>
-  </Korisnik>
-  <Korisnik>
-    <KorIme>cicko</KorIme>
-    <Lozinka>cicko</Lozinka>
-    <Ime>Cvijetin</Ime>
-    <Prezime>Glisic</Prezime>
-    <Pol>MUSKI</Pol>
-    <Email>cickooo@gmail.com</Email>
-    <DatumRodjenja>2000-07-03T00:00:00</DatumRodjenja>
-    <Uloga>POSETILAC</Uloga>
-    <naziviGrupnihTreningaPosetilac>BEAST CARDIO //BODY PUMP 1222222</naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <naziviGrupnihTreningaTrener>trening222/YOGA trening/TRENING 1</naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>GYMGYM NS</fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
     <Blokiran>NE</Blokiran>
   </Korisnik>
   <Korisnik>
-    <KorIme>MARKO</KorIme>
-    <Lozinka>Marko</Lozinka>
-    <Ime>Marko</Ime>
-    <Prezime>Markovic</Prezime>
+    <KorIme>Cicko</KorIme>
+    <Lozinka>cicko</Lozinka>
+    <Ime>Cvijetin</Ime>
+    <Prezime>Glisic</Prezime>
     <Pol>MUSKI</Pol>
-    <Email>m@hotmail.com</Email>
-    <DatumRodjenja>2001-07-13T00:00:00</DatumRodjenja>
+    <Email>cilecickocvijetin@gmail.com</Email>
+    <DatumRodjenja>2000-03-07T00:00:00</DatumRodjenja>
+    <Uloga>POSETILAC</Uloga>
+    <naziviGrupnihTreningaPosetilac>TRENING 1/trening222/YOGA trening</naziviGrupnihTreningaPosetilac>
+    <naziviGrupnihTreningaTrener></naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv></fitnesCentarNaziv>
+    <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
+    <Blokiran></Blokiran>
+  </Korisnik>
+  <Korisnik>
+    <KorIme>dejan</KorIme>
+    <Lozinka>dejan</Lozinka>
+    <Ime>Dejan</Ime>
+    <Prezime>Dejan</Prezime>
+    <Pol>MUSKI</Pol>
+    <Email>deki@gmail.com</Email>
+    <DatumRodjenja>2022-05-11T00:00:00</DatumRodjenja>
     <Uloga>TRENER</Uloga>
     <naziviGrupnihTreningaPosetilac></naziviGrupnihTreningaPosetilac>
-    <naziviGrupnihTreningaTrener>BODY PUMP 1222222/</naziviGrupnihTreningaTrener>
-    <fitnesCentarNaziv>CICKO  GYM</fitnesCentarNaziv>
+    <naziviGrupnihTreningaTrener>TRENING 1/BBBBBB/</naziviGrupnihTreningaTrener>
+    <fitnesCentarNaziv>CICKO GYM</fitnesCentarNaziv>
     <NazivifitnesCentaraVlasnik></NazivifitnesCentaraVlasnik>
     <Blokiran>NE</Blokiran>
   </Korisnik>

@@ -118,10 +118,10 @@
 <div class="div3"><h2>GRUPNI TRENINZI</h2></div>
 
 @{
-            
-            foreach (var trening in ViewBag.GrupniTreninzi)
-            {
-                if (trening.FitnesCentar.Naziv == ViewBag.Naziv)
+
+    foreach (var trening in ViewBag.GrupniTreninzi)
+    {
+        if (trening.FitnesCentar.Naziv == ViewBag.Naziv && DateTime.Compare(trening.DatumiVreme, DateTime.Now) > 0)
                 {
 <table class="tabela1">
     <tr><td>Naziv:</td><td>@trening.Naziv</td></tr>

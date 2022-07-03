@@ -1,0 +1,123 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Istorija";
+}
+
+<style>
+    html {
+        background-color: lightblue
+    }
+
+    .h11 {
+        font-family: cursive;
+        font-style: italic;
+        color: white;
+        text-align: center
+    }
+
+    .tabela1 {
+        border: 5px solid;
+        background-color: black;
+        border-color: white;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .div1 {
+        background-color: black;
+    }
+
+    .div2 {
+        text-align: right;
+    }
+
+    .registracija {
+        background-color: black;
+        color: white;
+        margin-right: auto;
+    }
+
+        .registracija:hover {
+            background-color: gold;
+            color: black;
+        }
+
+    .polje1 {
+        border-bottom: 3px solid;
+        border-color: white;
+    }
+
+    .polje2 {
+        height: 10px;
+    }
+
+    .polje3 {
+        border-top: 3px solid;
+    }
+
+    .button1 {
+        background-color: black;
+        color: white;
+    }
+
+        .button1:hover {
+            background-color: gold;
+            color: black;
+        }
+
+    .input1 {
+        background-color: silver;
+    }
+
+        .input1:hover {
+            background-color: white;
+        }
+</style>
+
+<body>
+    <div class="div1">
+
+        <h1 class="h11">
+
+            ISTORIJA TRENINGA
+
+        </h1>
+        <div class="div2">
+            
+            <input class="registracija" type="button" value="Vrati se nazad" onclick="location.href='@Url.Action("Index","Trener")'" />
+        </div>
+
+    </div>
+
+
+    <br />
+    <br />
+    <table class="tabela1">
+        <tr><th colspan="5"><h2>Treninzi</h2></th></tr>
+        <tr><td class="polje1">Naziv</td><td class="polje1">Tip</td><td class="polje1">Posetioci</td><td class="polje1">Vreme</td><td class="polje1"></td></tr>
+        @foreach (var t in ViewBag.Treninzi)
+        {
+            <tr><td>@t.Naziv</td><td>@t.TipTreninga</td><td>@t.PrijavljeniPosetioci.Count</td><td>@t.DatumiVreme</td><td><form method="get" action="/Trener/PrikazPosetilaca"><input type="hidden" name="naziv" value="@t.Naziv" /><input type="hidden" name="nazivfc" value="@t.FitnesCentar.Naziv" /> <input class="registracija" type="submit" value="Posetioci" /></form></td></tr>
+        }
+    </table>
+    <br />
+    <br />
+    <form action="/Trener/SortirajIstoriju" method="post">
+        <table class="tabela1">
+            <tr><th colspan="5"><h2>PRETRAGA</h2></th></tr>
+            <tr><td>Datum i vreme:</td><td>od:</td><td><input class="input1" name="vremeod" /></td><td>do:</td><td><input class="input1" name="vremedo" /></td></tr>
+            <tr><td class="polje2" colspan="5"></td></tr>
+            <tr><td>Naziv:</td><td></td><td colspan="3"><input class="input1" name="naziv" /></td></tr>
+            <tr><td class="polje2" colspan="5"></td></tr>
+            <tr><td>Tip:</td><td></td><td colspan="3"><Select class="input1" name="tippretraga" ><option></option><option>CARDIO</option><option>BODY_PUMP</option><option>YOGA</option><option>LESS_MILLS_TONE</option></Select></td></tr>
+            <tr><td class="polje2" colspan="5"></td></tr>
+            <tr><td>Sortiraj:</td><td></td><td><select class="input1" name="sortiranjePo"><option></option><option>NAZIV</option><option>DATUM I VREME</option><option>TIP TRENINGA</option></select></td><td></td><td><select name="sortiranjeRedosled" class="input1"><option>OPADAJUCE</option><option>RASTUCE</option></select></td></tr>
+            <tr><td class="polje2" colspan="5"></td></tr>
+            <tr><td class="polje3" colspan="5"><input class="button1" type="submit" value="Pretrazi" /></td></tr>
+
+        </table>
+    </form>
+    </body>
